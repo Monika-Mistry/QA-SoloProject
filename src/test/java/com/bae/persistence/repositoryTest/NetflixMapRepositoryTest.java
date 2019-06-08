@@ -1,8 +1,12 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.fail;
+
 import org.junit.Before;
+import org.junit.Test;
 
 import com.bae.persistence.repository.NetflixMapRepository;
+import com.bae.util.JSONUtil;
 
 public class NetflixMapRepositoryTest {
 
@@ -12,6 +16,52 @@ public class NetflixMapRepositoryTest {
 	@Before
 	public void setup() {
 		nmr = new NetflixMapRepository();
-		json = newJSONUtil();
+		json = new JSONUtil();
 	}
+
+	@Test
+	public void returnNoAccountsWhenMapEmpty() {
+		fail("TODO");
+	}
+
+	@Test
+	public void returnAccountsWhenMapIsFilled() {
+		fail("TODO");
+	}
+
+	@Test
+	public void addAProgram() {
+		fail("TODO");
+	}
+
+	@Test
+	public void addTwoProgrammes() {
+		fail("TODO");
+	}
+
+	@Test
+	public void addAProgramWhenItAlreadyExists() {
+		fail("TODO");
+	}
+
+	@Test
+	public void deleteAProgram() {
+		fail("TODO");
+	}
+
+	@Test
+	public void deleteTwoProgrammes() {
+		fail("TODO");
+	}
+
+	@Test
+	public void removeAProgramWhenItDoesNotExist() {
+		fail("TODO");
+	}
+
+	@Test
+	public void updateAProgram() {
+		fail("TODO");
+	}
+
 }

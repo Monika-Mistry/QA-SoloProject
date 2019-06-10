@@ -11,7 +11,10 @@ public class NetflixMapRepository implements NetflixRepository {
 	private Map<Integer, Netflix> netflixMap = new HashMap<Integer, Netflix>();
 
 	public String addAProgram(String program) {
+		JSONUtil jsonUtil = new JSONUtil();
+		Netflix newProgram = jsonUtil.getObjectForJSON(program, Netflix.class);
 
+		netflixMap.put(newProgram.getNetflixId(), newProgram);
 		return null;
 	}
 
@@ -21,7 +24,7 @@ public class NetflixMapRepository implements NetflixRepository {
 	}
 
 	public String getAProgram(String program) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

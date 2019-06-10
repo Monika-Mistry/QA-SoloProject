@@ -62,19 +62,34 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void addAProgramWhenItAlreadyExists() {
-		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
-		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"Friends\",\"genreId\":2}");
+		fail("TODO");
 
 	}
 
 	@Test
 	public void deleteAProgram() {
-		fail("TODO");
+		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
+		nmr.getNetflixMap().put(1, n1);
+
+		nmr.removeAProgram(1);
+
+		assertEquals(0, nmr.getNetflixMap().size());
+
 	}
 
 	@Test
 	public void deleteTwoProgrammes() {
-		fail("TODO");
+		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
+		Netflix n2 = new Netflix(2, "UK", "Friends", 2);
+
+		nmr.getNetflixMap().put(1, n1);
+		nmr.getNetflixMap().put(2, n2);
+
+		nmr.removeAProgram(1);
+		nmr.removeAProgram(2);
+
+		assertEquals(0, nmr.getNetflixMap().size());
+
 	}
 
 	@Test
@@ -84,7 +99,13 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void updateAProgram() {
-		fail("TODO");
+		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
+		nmr.getNetflixMap().put(1, n1);
+
+		nmr.updateAProgram(1,
+				"{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}");
+
+		assertTrue(nmr.getNetflixMap().get(1).getCountry().equals("USA"));
 	}
 
 }

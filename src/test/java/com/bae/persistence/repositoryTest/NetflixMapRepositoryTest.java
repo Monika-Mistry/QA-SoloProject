@@ -1,5 +1,6 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -21,7 +22,8 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void returnNoAccountsWhenMapEmpty() {
-		fail("TODO");
+		assertEquals(0, nmr.getNetflixMap().size());
+		assertEquals("{}", nmr.getAllProgrammes());
 	}
 
 	@Test

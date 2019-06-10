@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bae.persistence.domain.Netflix;
+import com.bae.util.JSONUtil;
 
 public class NetflixMapRepository implements NetflixRepository {
 
@@ -15,7 +16,8 @@ public class NetflixMapRepository implements NetflixRepository {
 	}
 
 	public String getAllProgrammes() {
-		return "{}";
+		JSONUtil jsonUtil = new JSONUtil();
+		return jsonUtil.getJSONForObject(netflixMap);
 	}
 
 	public String getAProgram(String program) {

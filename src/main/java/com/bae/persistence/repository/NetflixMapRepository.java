@@ -10,13 +10,12 @@ public class NetflixMapRepository implements NetflixRepository {
 	private Map<Integer, Netflix> netflixMap = new HashMap<Integer, Netflix>();
 
 	public String addAProgram(String program) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	public String getAllProgrammes() {
-		// TODO Auto-generated method stub
-		return null;
+		return "{}";
 	}
 
 	public String getAProgram(String program) {

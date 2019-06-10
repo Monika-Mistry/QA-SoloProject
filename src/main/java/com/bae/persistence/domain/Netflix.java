@@ -11,33 +11,33 @@ public class Netflix {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int netflixID;
+	private int netflixId;
 	@Column(length = 3)
 	// 3 letter country code
 	private String country;
 	@Column(length = 100)
 	private String title;
 	@Column(length = 2)
-	private int genreID;
+	private int genreId;
 
 	public Netflix() {
 
 	}
 
-	public Netflix(int netflixID, String country, String title, int genreID) {
+	public Netflix(int netflixId, String country, String title, int genreId) {
 		super();
-		this.netflixID = netflixID;
+		this.netflixId = netflixId;
 		this.country = country;
 		this.title = title;
-		this.genreID = genreID;
+		this.genreId = genreId;
 	}
 
-	public int getNetflixID() {
-		return netflixID;
+	public int getNetflixId() {
+		return netflixId;
 	}
 
-	public void setNetflixID(int netflixID) {
-		this.netflixID = netflixID;
+	public void setNetflixId(int netflixId) {
+		this.netflixId = netflixId;
 	}
 
 	public String getCountry() {
@@ -56,12 +56,12 @@ public class Netflix {
 		this.title = title;
 	}
 
-	public int getGenreID() {
-		return genreID;
+	public int getGenreId() {
+		return genreId;
 	}
 
-	public void setGenreID(int genreID) {
-		this.genreID = genreID;
+	public void setGenreId(int genreId) {
+		this.genreId = genreId;
 	}
 
 }

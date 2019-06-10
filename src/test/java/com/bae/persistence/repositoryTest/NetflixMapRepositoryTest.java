@@ -1,11 +1,13 @@
 package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.repository.NetflixMapRepository;
 import com.bae.util.JSONUtil;
 
@@ -28,22 +30,41 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void returnAccountsWhenMapIsFilled() {
-		fail("TODO");
+		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
+		nmr.getNetflixMap().put(1, n1);
+
+		assertEquals(1, nmr.getNetflixMap().size());
+		assertEquals(
+				"{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}",
+				nmr.getAllProgrammes());
+
 	}
 
 	@Test
 	public void addAProgram() {
-		fail("TODO");
+		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+
+		assertEquals(1, nmr.getNetflixMap().size());
+		assertTrue(nmr.getNetflixMap().get(1).getTitle().equals("OITNB"));
+
 	}
 
 	@Test
 	public void addTwoProgrammes() {
-		fail("TODO");
+		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+		nmr.addAProgram("{\"netflixId\":2,\"country\":\"UK\",\"title\":\"Friends\",\"genreId\":2}");
+
+		assertEquals(2, nmr.getNetflixMap().size());
+		assertTrue(nmr.getNetflixMap().get(1).getCountry().equals("UK"));
+		assertTrue(nmr.getNetflixMap().get(2).getTitle().equals("Friends"));
+
 	}
 
 	@Test
 	public void addAProgramWhenItAlreadyExists() {
-		fail("TODO");
+		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"Friends\",\"genreId\":2}");
+
 	}
 
 	@Test

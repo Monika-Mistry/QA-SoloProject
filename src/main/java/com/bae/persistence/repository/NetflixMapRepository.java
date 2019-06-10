@@ -9,17 +9,16 @@ import com.bae.util.JSONUtil;
 public class NetflixMapRepository implements NetflixRepository {
 
 	private Map<Integer, Netflix> netflixMap = new HashMap<Integer, Netflix>();
+	private JSONUtil jsonUtil = new JSONUtil();
 
 	public String addAProgram(String program) {
-		JSONUtil jsonUtil = new JSONUtil();
 		Netflix newProgram = jsonUtil.getObjectForJSON(program, Netflix.class);
 
 		netflixMap.put(newProgram.getNetflixId(), newProgram);
-		return null;
+		return program;
 	}
 
 	public String getAllProgrammes() {
-		JSONUtil jsonUtil = new JSONUtil();
 		return jsonUtil.getJSONForObject(netflixMap);
 	}
 

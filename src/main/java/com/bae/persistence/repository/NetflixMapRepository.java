@@ -28,8 +28,11 @@ public class NetflixMapRepository implements NetflixRepository {
 	}
 
 	public String updateAProgram(int id, String program) {
-		// TODO Auto-generated method stub
-		return null;
+		Netflix updatedProgram = jsonUtil.getObjectForJSON(program,
+				Netflix.class);
+		netflixMap.replace(id, updatedProgram);
+
+		return jsonUtil.getJSONForObject(netflixMap.get(id));
 	}
 
 	public String removeAProgram(int id) {

@@ -33,8 +33,14 @@ public class NetflixMapRepository implements NetflixRepository {
 	}
 
 	public String removeAProgram(int id) {
-		netflixMap.remove(id);
-		return jsonUtil.getJSONForObject(netflixMap.get(id));
+		if (netflixMap.containsKey(id)) {
+			netflixMap.remove(id);
+			return jsonUtil.getJSONForObject(netflixMap.get(id));
+		}
+
+		else {
+			return "{\"message\": \"Program does not exist\"}";
+		}
 	}
 
 	public Map<Integer, Netflix> getNetflixMap() {

@@ -32,10 +32,9 @@ public class NetflixMapRepository implements NetflixRepository {
 		return null;
 	}
 
-	@Override
 	public String removeAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		netflixMap.remove(id);
+		return jsonUtil.getJSONForObject(netflixMap.get(id));
 	}
 
 	public Map<Integer, Netflix> getNetflixMap() {

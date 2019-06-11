@@ -31,15 +31,14 @@ public class NetflixMapRepositoryTest {
 		nmr.getNetflixMap().put(1, n1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
-		assertEquals(
-				"{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}",
+		assertEquals("{\"1\":" + Constants.TEST_PROGRAM1STR + "}",
 				nmr.getAllProgrammes());
 
 	}
 
 	@Test
 	public void addAProgram() {
-		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+		nmr.addAProgram(Constants.TEST_PROGRAM1STR);
 
 		assertEquals(1, nmr.getNetflixMap().size());
 		assertTrue(nmr.getNetflixMap().get(1).getTitle().equals("OITNB"));
@@ -48,8 +47,8 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void addTwoProgrammes() {
-		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
-		nmr.addAProgram("{\"netflixId\":2,\"country\":\"UK\",\"title\":\"Friends\",\"genreId\":2}");
+		nmr.addAProgram(Constants.TEST_PROGRAM1STR);
+		nmr.addAProgram(Constants.TEST_PROGRAM2STR);
 
 		assertEquals(2, nmr.getNetflixMap().size());
 		assertTrue(nmr.getNetflixMap().get(1).getCountry().equals("UK"));
@@ -59,10 +58,9 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void addAProgramWhenItAlreadyExists() {
-		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
-		nmr.getNetflixMap().put(1, n1);
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
 
-		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+		nmr.addAProgram(Constants.TEST_PROGRAM1STR);
 
 		if (nmr.getNetflixMap().size() == 2) {
 			fail("Added a program which already exists");
@@ -74,8 +72,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void deleteAProgram() {
-		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
-		nmr.getNetflixMap().put(1, n1);
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
 
 		nmr.removeAProgram(1);
 
@@ -85,11 +82,8 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void deleteTwoProgrammes() {
-		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
-		Netflix n2 = new Netflix(2, "UK", "Friends", 2);
-
-		nmr.getNetflixMap().put(1, n1);
-		nmr.getNetflixMap().put(2, n2);
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(2, Constants.TEST_PROGRAM2);
 
 		nmr.removeAProgram(1);
 		nmr.removeAProgram(2);
@@ -100,16 +94,14 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void removeAProgramWhenItDoesNotExist() {
-		assertTrue(nmr.removeAProgram(1).contains("does not exist"));
+		assertTrue(nmr.removeAProgram(1).contains("Program does not exist"));
 	}
 
 	@Test
 	public void updateAProgram() {
-		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
-		nmr.getNetflixMap().put(1, n1);
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
 
-		nmr.updateAProgram(1,
-				"{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}");
+		nmr.updateAProgram(1, Constants.TEST_UPDATEPROGRAM);
 
 		assertTrue(nmr.getNetflixMap().get(1).getCountry().equals("USA"));
 	}

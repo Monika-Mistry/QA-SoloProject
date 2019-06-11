@@ -7,7 +7,6 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.repository.NetflixMapRepository;
 
 public class NetflixMapRepositoryTest {
@@ -27,8 +26,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void returnAccountsWhenMapIsFilled() {
-		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
-		nmr.getNetflixMap().put(1, n1);
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
 		assertEquals("{\"1\":" + Constants.TEST_PROGRAM1STR + "}",
@@ -94,7 +92,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void removeAProgramWhenItDoesNotExist() {
-		assertTrue(nmr.removeAProgram(1).contains("Program does not exist"));
+		assertTrue(nmr.removeAProgram(1).contains(Constants.NOPROGRAMEXISTS));
 	}
 
 	@Test

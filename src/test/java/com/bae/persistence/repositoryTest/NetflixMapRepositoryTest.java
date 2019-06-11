@@ -9,17 +9,14 @@ import org.junit.Test;
 
 import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.repository.NetflixMapRepository;
-import com.bae.util.JSONUtil;
 
 public class NetflixMapRepositoryTest {
 
 	private NetflixMapRepository nmr;
-	private JSONUtil json;
 
 	@Before
 	public void setup() {
 		nmr = new NetflixMapRepository();
-		json = new JSONUtil();
 	}
 
 	@Test
@@ -62,7 +59,16 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void addAProgramWhenItAlreadyExists() {
-		fail("TODO");
+		Netflix n1 = new Netflix(1, "UK", "OITNB", 1);
+		nmr.getNetflixMap().put(1, n1);
+
+		nmr.addAProgram("{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}");
+
+		if (nmr.getNetflixMap().size() == 2) {
+			fail("Added a program which already exists");
+		}
+
+		assertEquals(1, nmr.getNetflixMap().size());
 
 	}
 
@@ -94,7 +100,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void removeAProgramWhenItDoesNotExist() {
-		fail("TODO");
+		assertTrue(nmr.removeAProgram(1).contains("does not exist"));
 	}
 
 	@Test

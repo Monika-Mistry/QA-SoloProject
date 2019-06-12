@@ -54,9 +54,15 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 		return null;
 	}
 
+	@Transactional(TxType.REQUIRED)
 	public String removeAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Netflix program = manager.find(Netflix.class, id);
+		if (program != null) {
+			manager.remove(program);
+			return "{\"message\": \"" + program.getTitle() + " removed\"}";
+		} else {
+			return "{\"message\": \"Program does not exist\"}";
+		}
 	}
 
 }

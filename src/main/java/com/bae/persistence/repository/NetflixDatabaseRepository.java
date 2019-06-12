@@ -23,9 +23,13 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	@Inject
 	private JSONUtil jsonUtil;
 
+	@Transactional(TxType.REQUIRED)
 	public String addAProgram(String program) {
-		// TODO Auto-generated method stub
-		return null;
+		Netflix newProgram = jsonUtil.getObjectForJSON(program, Netflix.class);
+
+		manager.persist(newProgram);
+
+		return program;
 	}
 
 	public String getAllProgrammes() {

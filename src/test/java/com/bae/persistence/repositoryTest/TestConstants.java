@@ -2,7 +2,7 @@ package com.bae.persistence.repositoryTest;
 
 import com.bae.persistence.domain.Netflix;
 
-public class Constants {
+public class TestConstants {
 
 	public static final Netflix TEST_PROGRAM1 = new Netflix(1, "UK", "OITNB", 1);
 	public static final String TEST_PROGRAM1STR = "{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}";

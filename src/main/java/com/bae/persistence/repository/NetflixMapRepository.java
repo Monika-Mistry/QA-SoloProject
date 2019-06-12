@@ -24,7 +24,7 @@ public class NetflixMapRepository implements NetflixRepository {
 
 	public String getAProgram(int id) {
 
-		return null;
+		return jsonUtil.getJSONForObject(netflixMap.get(id));
 	}
 
 	public String updateAProgram(int id, String program) {

@@ -3,9 +3,12 @@ package com.bae.persistence.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
+
 import com.bae.persistence.domain.Netflix;
 import com.bae.util.JSONUtil;
 
+@Alternative
 public class NetflixMapRepository implements NetflixRepository {
 
 	private Map<Integer, Netflix> netflixMap = new HashMap<Integer, Netflix>();

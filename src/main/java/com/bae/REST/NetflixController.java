@@ -12,24 +12,23 @@ public class NetflixController {
 	private NetflixService service;
 
 	public String addAProgram(String program) {
-		return null;
-
+		return service.addAProgram(program);
 	}
 
 	public String getAllProgrammes() {
-		return null;
+		return service.getAllProgrammes();
 	}
 
 	public String getAProgram(int id) {
-		return null;
+		return service.getAProgram(id);
 	}
 
 	public String updateAProgram(int id, String program) {
-		return null;
+		return service.updateAProgram(id, program);
 	}
 
 	public String removeAProgram(int id) {
-		return null;
+		return service.removeAProgram(id);
 	}
 
 }

@@ -65,7 +65,6 @@ public class NetflixMapRepositoryTest {
 		}
 
 		assertEquals(1, nmr.getNetflixMap().size());
-
 	}
 
 	@Test

@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
 import com.bae.persistence.domain.Netflix;
+import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 
 @Default
@@ -33,7 +34,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	}
 
 	public String getAllProgrammes() {
-		Query query = manager.createQuery("SELECT n FROM netflix n");
+		Query query = manager.createQuery(Constants.GETALLPROGRAMSQUERY);
 
 		Collection<Netflix> programmes = (Collection<Netflix>) query
 				.getResultList();
@@ -45,7 +46,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 		if (manager.find(Netflix.class, id) != null) {
 			return jsonUtil.getJSONForObject(manager.find(Netflix.class, id));
 		} else {
-			return "{\"message\": \"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 
@@ -61,7 +62,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 
 			return jsonUtil.getJSONForObject(programToUpdate);
 		} else {
-			return "{\"message\": \"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 
@@ -72,7 +73,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 			manager.remove(program);
 			return "{\"message\": \"" + program.getTitle() + " removed\"}";
 		} else {
-			return "{\"message\": \"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 

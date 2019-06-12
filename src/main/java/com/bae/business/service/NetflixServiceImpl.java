@@ -1,30 +1,32 @@
 package com.bae.business.service;
 
+import javax.inject.Inject;
+
+import com.bae.persistence.repository.NetflixRepository;
+
 public class NetflixServiceImpl implements NetflixService {
 
+	@Inject
+	private NetflixRepository netflixRepository;
+
 	public String addAProgram(String program) {
-		// TODO Auto-generated method stub
-		return null;
+		return netflixRepository.addAProgram(program);
 	}
 
 	public String getAllProgrammes() {
-		// TODO Auto-generated method stub
-		return null;
+		return netflixRepository.getAllProgrammes();
 	}
 
 	public String getAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return netflixRepository.getAProgram(id);
 	}
 
 	public String updateAProgram(int id, String program) {
-		// TODO Auto-generated method stub
-		return null;
+		return netflixRepository.updateAProgram(id, program);
 	}
 
 	public String removeAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return netflixRepository.removeAProgram(id);
 	}
 
 }

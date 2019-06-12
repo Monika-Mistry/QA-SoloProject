@@ -11,7 +11,7 @@ import com.bae.util.JSONUtil;
 @Alternative
 public class NetflixMapRepository implements NetflixRepository {
 
-	private Map<Integer, Netflix> netflixMap = new HashMap<Integer, Netflix>();
+	private Map<Integer, Netflix> netflixMap = new HashMap<>();
 	private JSONUtil jsonUtil = new JSONUtil();
 
 	public String addAProgram(String program) {

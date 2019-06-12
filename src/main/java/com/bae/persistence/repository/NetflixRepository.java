@@ -8,7 +8,7 @@ public interface NetflixRepository {
 	// R
 	public String getAllProgrammes();
 
-	public String getAProgram(String program);
+	public String getAProgram(int id);
 
 	// U
 	public String updateAProgram(int id, String program);

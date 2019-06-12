@@ -22,7 +22,7 @@ public class NetflixMapRepository implements NetflixRepository {
 		return jsonUtil.getJSONForObject(netflixMap);
 	}
 
-	public String getAProgram(String program) {
+	public String getAProgram(int id) {
 
 		return null;
 	}

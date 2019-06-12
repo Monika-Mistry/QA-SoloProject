@@ -103,4 +103,16 @@ public class NetflixMapRepositoryTest {
 		assertTrue(nmr.getNetflixMap().get(1).getCountry().equals("USA"));
 	}
 
+	@Test
+	public void getAProgramThatExists() {
+		nmr.getNetflixMap().put(1, Constants.TEST_PROGRAM1);
+
+		assertTrue(nmr.getAProgram(1).contains("OITNB"));
+	}
+
+	@Test
+	public void getAProgramThatDoesNotExists() {
+
+		assertTrue(nmr.getAProgram(1).contains(Constants.NOPROGRAMEXISTS));
+	}
 }

@@ -1,6 +1,6 @@
 package com.bae.persistence.repository;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -36,8 +36,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	public String getAllProgrammes() {
 		Query query = manager.createQuery(Constants.GETALLPROGRAMSQUERY);
 
-		Collection<Netflix> programmes = (Collection<Netflix>) query
-				.getResultList();
+		List<Netflix> programmes = query.getResultList();
 		return jsonUtil.getJSONForObject(programmes);
 	}
 

@@ -49,9 +49,20 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 		}
 	}
 
+	@Transactional(TxType.REQUIRED)
 	public String updateAProgram(int id, String program) {
-		// TODO Auto-generated method stub
-		return null;
+		Netflix programToUpdate = manager.find(Netflix.class, id);
+		Netflix updatedProgram = jsonUtil.getObjectForJSON(program,
+				Netflix.class);
+		if (programToUpdate != null) {
+			programToUpdate.setCountry(updatedProgram.getCountry());
+			programToUpdate.setGenreId(updatedProgram.getGenreId());
+			programToUpdate.setTitle(updatedProgram.getTitle());
+
+			return jsonUtil.getJSONForObject(programToUpdate);
+		} else {
+			return "{\"message\": \"Program does not exist\"}";
+		}
 	}
 
 	@Transactional(TxType.REQUIRED)

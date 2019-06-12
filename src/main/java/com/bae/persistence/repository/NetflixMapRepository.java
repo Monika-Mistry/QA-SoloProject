@@ -23,8 +23,12 @@ public class NetflixMapRepository implements NetflixRepository {
 	}
 
 	public String getAProgram(int id) {
+		if (netflixMap.containsKey(id)) {
+			return jsonUtil.getJSONForObject(netflixMap.get(id));
+		} else {
+			return "{\"message\": \"Program does not exist\"}";
+		}
 
-		return jsonUtil.getJSONForObject(netflixMap.get(id));
 	}
 
 	public String updateAProgram(int id, String program) {

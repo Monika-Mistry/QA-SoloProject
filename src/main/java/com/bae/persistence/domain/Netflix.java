@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Netflix {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int netflixId;
 	@Column(length = 3)
 	// 3 letter country code

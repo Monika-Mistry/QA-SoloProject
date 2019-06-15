@@ -6,9 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.bae.persistence.domain.Watchlist;
 import com.bae.persistence.repository.WatchlistMapRepository;
-import com.bae.util.WatchStatus;
 
 public class WatchlistMapRepositoryTest {
 
@@ -29,18 +27,15 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void returnProgrammesWhenMapFilled() {
-		Watchlist wL1 = new Watchlist(1, WatchStatus.PENDING);
-		wmr.getWatchlistMap().put(1, wL1);
+		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
 
-		assertEquals("{\"1\":{\"netflixId\":1,\"status\":\"PENDING\"}}",
+		assertEquals("{\"1\":" + TestConstants.TEST_WATCHLIST1STR + "}",
 				wmr.getWatchlist());
 	}
 
 	@Test
 	public void addAProgramToWL() {
-		String wL1JSON = "{\"netflixId\":1,\"status\":\"PENDING\"}";
-
-		wmr.addAProgram(wL1JSON);
+		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
 
 		assertEquals(1, wmr.getWatchlistMap().size());
 		assertEquals(1, wmr.getWatchlistMap().get(1).getNetflixId());
@@ -48,11 +43,8 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void addTwoProgrammesToWL() {
-		String wL1JSON = "{\"netflixId\":1,\"status\":\"PENDING\"}";
-		String wL2JSON = "{\"netflixId\":2,\"status\":\"COMPLETED\"}";
-
-		wmr.addAProgram(wL1JSON);
-		wmr.addAProgram(wL2JSON);
+		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
+		wmr.addAProgram(TestConstants.TEST_WATCHLIST2STR);
 
 		assertEquals(2, wmr.getWatchlistMap().size());
 		assertEquals(2, wmr.getWatchlistMap().get(2).getNetflixId());
@@ -60,11 +52,8 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void addProgramAlreadyInWL() {
-		Watchlist wL1 = new Watchlist(1, WatchStatus.PENDING);
-		wmr.getWatchlistMap().put(1, wL1);
-
-		String wL1JSON = "{\"netflixId\":1,\"status\":\"PENDING\"}";
-		wmr.addAProgram(wL1JSON);
+		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
 
 		assertEquals(1, wmr.getWatchlistMap().size());
 

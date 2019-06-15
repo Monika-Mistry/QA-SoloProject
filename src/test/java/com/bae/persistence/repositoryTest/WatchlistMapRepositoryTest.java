@@ -60,7 +60,14 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void addProgramAlreadyInWL() {
-		fail("TODO");
+		Watchlist wL1 = new Watchlist(1, WatchStatus.PENDING);
+		wmr.getWatchlistMap().put(1, wL1);
+
+		String wL1JSON = "{\"netflixId\":1,\"status\":\"PENDING\"}";
+		wmr.addAProgram(wL1JSON);
+
+		assertEquals(1, wmr.getWatchlistMap().size());
+
 	}
 
 	@Test

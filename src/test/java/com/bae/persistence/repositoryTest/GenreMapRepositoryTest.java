@@ -21,7 +21,7 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnNoGenresWhenMapEmpty() {
-		fail("TODO");
+		assertEquals(0, gmr.getGenreMap().size());
 	}
 
 	@Test

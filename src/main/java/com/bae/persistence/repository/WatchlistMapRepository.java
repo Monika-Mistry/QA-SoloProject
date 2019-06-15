@@ -9,17 +9,16 @@ import com.bae.util.JSONUtil;
 public class WatchlistMapRepository implements WatchlistRepository {
 
 	private Map<Integer, Watchlist> watchlistMap = new HashMap<>();
+	private JSONUtil json = new JSONUtil();
 
 	public String addAProgram(String program) {
-		JSONUtil json = new JSONUtil();
 		Watchlist newProgram = json.getObjectForJSON(program, Watchlist.class);
 
 		watchlistMap.put(newProgram.getNetflixId(), newProgram);
-		return null;
+		return "{\"message\":\"Program added to watchlist\"}";
 	}
 
 	public String getWatchlist() {
-		JSONUtil json = new JSONUtil();
 		return json.getJSONForObject(watchlistMap);
 	}
 

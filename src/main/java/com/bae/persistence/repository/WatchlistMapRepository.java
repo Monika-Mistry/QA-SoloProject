@@ -15,8 +15,7 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	}
 
 	public String getWatchlist() {
-		// TODO Auto-generated method stub
-		return null;
+		return "{}";
 	}
 
 	public String removeAProgram(int id) {

@@ -19,13 +19,13 @@ public class NetflixMapRepositoryTest {
 	}
 
 	@Test
-	public void returnNoAccountsWhenMapEmpty() {
+	public void returnNoProgrammesWhenMapEmpty() {
 		assertEquals(0, nmr.getNetflixMap().size());
 		assertEquals("{}", nmr.getAllProgrammes());
 	}
 
 	@Test
-	public void returnAccountsWhenMapIsFilled() {
+	public void returnProgrammesWhenMapIsFilled() {
 		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
@@ -91,7 +91,8 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void removeAProgramWhenItDoesNotExist() {
-		assertTrue(nmr.removeAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
+		assertTrue(nmr.removeAProgram(1)
+				.contains(TestConstants.NOPROGRAMEXISTS));
 	}
 
 	@Test

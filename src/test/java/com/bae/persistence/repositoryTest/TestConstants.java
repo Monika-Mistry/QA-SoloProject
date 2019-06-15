@@ -23,6 +23,8 @@ public class TestConstants {
 			WatchStatus.PENDING);
 	public static final String TEST_WATCHLIST1STR = "{\"netflixId\":1,\"status\":\"PENDING\"}";
 
+	public static final Watchlist TEST_WATCHLIST2 = new Watchlist(2,
+			WatchStatus.COMPLETED);
 	public static final String TEST_WATCHLIST2STR = "{\"netflixId\":2,\"status\":\"COMPLETED\"}";
 
 }

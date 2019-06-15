@@ -61,17 +61,27 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void removeProgramFromWL() {
-		fail("TODO");
+		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+
+		wmr.removeAProgram(1);
+
+		assertEquals(0, wmr.getWatchlistMap().size());
 	}
 
 	@Test
 	public void removeTwoProgrammesFromWL() {
-		fail("TODO");
+		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(2, TestConstants.TEST_WATCHLIST2);
+
+		wmr.removeAProgram(1);
+		wmr.removeAProgram(2);
+
+		assertEquals(0, wmr.getWatchlistMap().size());
 	}
 
 	@Test
 	public void removeProgramNotInWL() {
-		fail("TODO");
+		assertTrue(wmr.removeAProgram(1).contains("does not exist"));
 	}
 
 	@Test

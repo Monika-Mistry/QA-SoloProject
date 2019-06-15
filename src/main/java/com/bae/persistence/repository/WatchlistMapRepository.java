@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.bae.persistence.domain.Watchlist;
 import com.bae.util.JSONUtil;
+import com.bae.util.WatchStatus;
 
 public class WatchlistMapRepository implements WatchlistRepository {
 
@@ -37,8 +38,29 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	}
 
 	public String updateWatchStatus(int id, String status) {
-		// TODO Auto-generated method stub
-		return null;
+		if (watchlistMap.containsKey(id)) {
+			Watchlist program = watchlistMap.get(id);
+			switch (status) {
+			case "Not Started":
+				program.setStatus(WatchStatus.PENDING);
+				watchlistMap.replace(id, program);
+				break;
+			case "Watching":
+				program.setStatus(WatchStatus.INPROGRESS);
+				watchlistMap.replace(id, program);
+				break;
+			case "Watched":
+				program.setStatus(WatchStatus.COMPLETED);
+				watchlistMap.replace(id, program);
+				break;
+			default:
+				watchlistMap.replace(id, program);
+				break;
+			}
+			return "{\"message\":\"Program watch status updated\"}";
+		} else {
+			return "{\"message\":\"Program does not exist\"}";
+		}
 	}
 
 	public Map<Integer, Watchlist> getWatchlistMap() {

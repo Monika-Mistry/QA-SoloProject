@@ -90,7 +90,7 @@ public class WatchlistMapRepositoryTest {
 	@Test
 	public void updateWatchStatusForProgramInWL() {
 		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
-		wmr.updateWatchStatus(1, "watching");
+		wmr.updateWatchStatus(1, "Watching");
 
 		assertTrue(wmr.getWatchlistMap().get(1).getStatus()
 				.equals(WatchStatus.INPROGRESS));

@@ -1,25 +1,28 @@
 package com.bae.business.service;
 
+import javax.inject.Inject;
+
+import com.bae.persistence.repository.WatchlistRepository;
+
 public class WatchlistServiceImpl implements WatchlistService {
 
+	@Inject
+	private WatchlistRepository watchlistRepository;
+
 	public String addAProgram(String program) {
-		// TODO Auto-generated method stub
-		return null;
+		return watchlistRepository.addAProgram(program);
 	}
 
 	public String getWatchlist() {
-		// TODO Auto-generated method stub
-		return null;
+		return watchlistRepository.getWatchlist();
 	}
 
 	public String removeAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return watchlistRepository.removeAProgram(id);
 	}
 
 	public String updateWatchStatus(int id, String status) {
-		// TODO Auto-generated method stub
-		return null;
+		watchlistRepository.updateWatchStatus(id, status);
 	}
 
 }

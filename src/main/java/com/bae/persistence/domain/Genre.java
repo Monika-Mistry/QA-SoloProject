@@ -1,10 +1,12 @@
 package com.bae.persistence.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Genre {
 
+	@Id
 	private int genreId;
 	private String genre;
 

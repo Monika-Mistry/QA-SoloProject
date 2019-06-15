@@ -20,8 +20,9 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void returnNoProgrammesWhenMapEmpty() {
-		wmr.getWatchlist();
+
 		assertEquals(0, wmr.getWatchlistMap().size());
+		assertEquals("{}", wmr.getWatchlist());
 	}
 
 	@Test

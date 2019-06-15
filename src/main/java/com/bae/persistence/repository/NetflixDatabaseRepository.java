@@ -34,7 +34,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	}
 
 	public String getAllProgrammes() {
-		Query query = manager.createQuery(Constants.GETALLPROGRAMSQUERY);
+		Query query = manager.createQuery(Constants.GETALLNETFLIXQUERY);
 
 		List<Netflix> programmes = query.getResultList();
 		return jsonUtil.getJSONForObject(programmes);

@@ -10,6 +10,6 @@ public class Constants {
 
 	// Query
 	public static final String GETALLNETFLIXQUERY = "SELECT n FROM Netflix n";
-	public static final String GETALLWATCHLISTQUERY = "SELECT w FROM Watchlist w";
+	public static final String GETWATCHLISTQUERY = "SELECT w FROM Watchlist w";
 
 }

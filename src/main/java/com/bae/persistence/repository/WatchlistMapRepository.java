@@ -11,7 +11,10 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	private Map<Integer, Watchlist> watchlistMap = new HashMap<>();
 
 	public String addAProgram(String program) {
-		// TODO Auto-generated method stub
+		JSONUtil json = new JSONUtil();
+		Watchlist newProgram = json.getObjectForJSON(program, Watchlist.class);
+
+		watchlistMap.put(newProgram.getNetflixId(), newProgram);
 		return null;
 	}
 

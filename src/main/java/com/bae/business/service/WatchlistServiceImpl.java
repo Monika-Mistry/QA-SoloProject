@@ -22,7 +22,7 @@ public class WatchlistServiceImpl implements WatchlistService {
 	}
 
 	public String updateWatchStatus(int id, String status) {
-		watchlistRepository.updateWatchStatus(id, status);
+		return watchlistRepository.updateWatchStatus(id, status);
 	}
 
 }

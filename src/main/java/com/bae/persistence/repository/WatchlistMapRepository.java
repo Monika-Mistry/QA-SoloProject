@@ -20,7 +20,7 @@ public class WatchlistMapRepository implements WatchlistRepository {
 			watchlistMap.put(newProgram.getNetflixId(), newProgram);
 			return "{\"message\":\"Program added to watchlist\"}";
 		} else {
-			return "{\"message\":\"Program already in watchlist\"}";
+			return "{\"message\":\"Program already exists\"}";
 		}
 	}
 

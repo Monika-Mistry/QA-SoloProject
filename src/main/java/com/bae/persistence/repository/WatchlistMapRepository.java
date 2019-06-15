@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bae.persistence.domain.Watchlist;
+import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 import com.bae.util.WatchStatus;
 
@@ -18,9 +19,9 @@ public class WatchlistMapRepository implements WatchlistRepository {
 		if (!watchlistMap.containsValue(newProgram)) {
 
 			watchlistMap.put(newProgram.getNetflixId(), newProgram);
-			return "{\"message\":\"Program added to watchlist\"}";
+			return Constants.PROGRAMADDED;
 		} else {
-			return "{\"message\":\"Program already exists\"}";
+			return Constants.PROGRAMEXISTS;
 		}
 	}
 
@@ -31,9 +32,9 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	public String removeAProgram(int id) {
 		if (watchlistMap.containsKey(id)) {
 			watchlistMap.remove(id);
-			return "{\"message\":\"Program removed from watchlist\"}";
+			return Constants.PROGRAMREMOVED;
 		} else {
-			return "{\"message\":\"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 
@@ -57,9 +58,9 @@ public class WatchlistMapRepository implements WatchlistRepository {
 				watchlistMap.replace(id, program);
 				break;
 			}
-			return "{\"message\":\"Program watch status updated\"}";
+			return json.getJSONForObject(program);
 		} else {
-			return "{\"message\":\"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 

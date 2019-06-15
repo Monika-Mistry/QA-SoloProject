@@ -48,7 +48,14 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void addTwoProgrammesToWL() {
-		fail("TODO");
+		String wL1JSON = "{\"netflixId\":1,\"status\":\"PENDING\"}";
+		String wL2JSON = "{\"netflixId\":2,\"status\":\"COMPLETED\"}";
+
+		wmr.addAProgram(wL1JSON);
+		wmr.addAProgram(wL2JSON);
+
+		assertEquals(2, wmr.getWatchlistMap().size());
+		assertEquals(2, wmr.getWatchlistMap().get(2).getNetflixId());
 	}
 
 	@Test

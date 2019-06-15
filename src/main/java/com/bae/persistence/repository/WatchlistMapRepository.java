@@ -3,11 +3,14 @@ package com.bae.persistence.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
+
 import com.bae.persistence.domain.Watchlist;
 import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 import com.bae.util.WatchStatus;
 
+@Alternative
 public class WatchlistMapRepository implements WatchlistRepository {
 
 	private Map<Integer, Watchlist> watchlistMap = new HashMap<>();

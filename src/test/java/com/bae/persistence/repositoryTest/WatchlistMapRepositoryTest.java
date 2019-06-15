@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.bae.persistence.domain.Watchlist;
 import com.bae.persistence.repository.WatchlistMapRepository;
-import com.bae.util.JSONUtil;
 import com.bae.util.WatchStatus;
 
 public class WatchlistMapRepositoryTest {
@@ -33,7 +32,7 @@ public class WatchlistMapRepositoryTest {
 		Watchlist wL1 = new Watchlist(1, WatchStatus.PENDING);
 		wmr.getWatchlistMap().put(1, wL1);
 
-		assertEquals("{\"1\":{\"netflixId\":1,\"status\":\"PENDING\"}",
+		assertEquals("{\"1\":{\"netflixId\":1,\"status\":\"PENDING\"}}",
 				wmr.getWatchlist());
 	}
 

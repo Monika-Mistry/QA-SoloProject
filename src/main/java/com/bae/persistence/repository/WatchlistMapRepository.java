@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bae.persistence.domain.Watchlist;
+import com.bae.util.JSONUtil;
 
 public class WatchlistMapRepository implements WatchlistRepository {
 
@@ -15,7 +16,8 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	}
 
 	public String getWatchlist() {
-		return "{}";
+		JSONUtil json = new JSONUtil();
+		return json.getJSONForObject(watchlistMap);
 	}
 
 	public String removeAProgram(int id) {

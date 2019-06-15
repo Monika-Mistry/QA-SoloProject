@@ -23,8 +23,8 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	}
 
 	public String removeAProgram(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		watchlistMap.remove(id);
+		return "{\"message\":\"Program removed from watchlist\"}";
 	}
 
 	public String updateWatchStatus(int id, String status) {

@@ -1,6 +1,7 @@
 package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -56,6 +57,8 @@ public class WatchlistMapRepositoryTest {
 		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
 
 		assertEquals(1, wmr.getWatchlistMap().size());
+		assertTrue(wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR).contains(
+				"already exists"));
 
 	}
 

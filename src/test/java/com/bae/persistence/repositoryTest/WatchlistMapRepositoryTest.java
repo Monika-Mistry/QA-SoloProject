@@ -5,16 +5,21 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bae.persistence.repository.WatchlistMapRepository;
+
 public class WatchlistMapRepositoryTest {
+
+	private WatchlistMapRepository wmr;
 
 	@Before
 	public void setup() {
+		wmr = new WatchlistMapRepository();
 
 	}
 
 	@Test
 	public void returnNoProgrammesWhenMapEmpty() {
-		fail("TODO");
+		assertEquals(0, wmr.getWatchlistMap().size());
 	}
 
 	@Test

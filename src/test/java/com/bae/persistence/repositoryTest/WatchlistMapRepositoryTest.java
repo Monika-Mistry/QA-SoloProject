@@ -1,5 +1,6 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -19,6 +20,7 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void returnNoProgrammesWhenMapEmpty() {
+		wmr.getWatchlist();
 		assertEquals(0, wmr.getWatchlistMap().size());
 	}
 

@@ -2,12 +2,12 @@ package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import com.bae.persistence.repository.WatchlistMapRepository;
+import com.bae.util.WatchStatus;
 
 public class WatchlistMapRepositoryTest {
 
@@ -88,8 +88,19 @@ public class WatchlistMapRepositoryTest {
 	}
 
 	@Test
-	public void updateWatchStatus() {
-		fail("TODO");
+	public void updateWatchStatusForProgramInWL() {
+		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.updateWatchStatus(1, "watching");
+
+		assertTrue(wmr.getWatchlistMap().get(1).getStatus()
+				.equals(WatchStatus.INPROGRESS));
+	}
+
+	@Test
+	public void updateWatchStatusForProgramNotInWL() {
+		assertTrue(wmr.updateWatchStatus(1, "watching").contains(
+				"does not exist"));
+
 	}
 
 }

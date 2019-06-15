@@ -36,7 +36,7 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 	}
 
 	public String getWatchlist() {
-		Query query = manager.createQuery(Constants.GETALLWATCHLISTQUERY);
+		Query query = manager.createQuery(Constants.GETWATCHLISTQUERY);
 
 		List<Watchlist> programmes = query.getResultList();
 		return jsonUtil.getJSONForObject(programmes);

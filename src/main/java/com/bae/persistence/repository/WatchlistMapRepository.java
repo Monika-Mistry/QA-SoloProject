@@ -14,8 +14,13 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	public String addAProgram(String program) {
 		Watchlist newProgram = json.getObjectForJSON(program, Watchlist.class);
 
-		watchlistMap.put(newProgram.getNetflixId(), newProgram);
-		return "{\"message\":\"Program added to watchlist\"}";
+		if (!watchlistMap.containsValue(newProgram)) {
+
+			watchlistMap.put(newProgram.getNetflixId(), newProgram);
+			return "{\"message\":\"Program added to watchlist\"}";
+		} else {
+			return "{\"message\":\"Program already in watchlist\"}";
+		}
 	}
 
 	public String getWatchlist() {
@@ -23,8 +28,12 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	}
 
 	public String removeAProgram(int id) {
-		watchlistMap.remove(id);
-		return "{\"message\":\"Program removed from watchlist\"}";
+		if (watchlistMap.containsKey(id)) {
+			watchlistMap.remove(id);
+			return "{\"message\":\"Program removed from watchlist\"}";
+		} else {
+			return "{\"message\":\"Program does not exist\"}";
+		}
 	}
 
 	public String updateWatchStatus(int id, String status) {

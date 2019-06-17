@@ -55,7 +55,10 @@ public class NetflixDatabaseRepositoryTest {
 	public void returnNoAccountsWhenMapEmpty() {
 		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
 		List<Netflix> programmes = new ArrayList<Netflix>();
+		Mockito.when(query.getResultList()).thenReturn(programmes);
 		assertEquals("[]", ndbr.getAllProgrammes());
 	}
+	
+	
 
 }

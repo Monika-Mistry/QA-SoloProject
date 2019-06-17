@@ -76,6 +76,12 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 		}
 	}
 	
-	public 
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public void setUtil(JSONUtil jsonUtil) {
+		this.jsonUtil = jsonUtil;
+	}
 
 }

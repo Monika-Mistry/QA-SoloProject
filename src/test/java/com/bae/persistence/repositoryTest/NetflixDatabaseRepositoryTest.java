@@ -43,7 +43,7 @@ public class NetflixDatabaseRepositoryTest {
 	}
 	
 	@Test
-	public void testgetallProgrammes() {
+	public void returnAccountsWhenMapIsFilled() {
 		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
 		List<Netflix> programmes = new ArrayList<Netflix>();
 		programmes.add(TestConstants.TEST_PROGRAM1);
@@ -51,5 +51,11 @@ public class NetflixDatabaseRepositoryTest {
 		assertEquals(TestConstants.TEST_PROGRAM1LIST, ndbr.getAllProgrammes());
 	}
 	
+	@Test
+	public void returnNoAccountsWhenMapEmpty() {
+		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
+		List<Netflix> programmes = new ArrayList<Netflix>();
+		assertEquals("[]", ndbr.getAllProgrammes());
+	}
 
 }

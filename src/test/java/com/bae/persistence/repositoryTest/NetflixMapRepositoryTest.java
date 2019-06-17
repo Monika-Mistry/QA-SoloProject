@@ -22,7 +22,7 @@ public class NetflixMapRepositoryTest {
 	@Test
 	public void returnNoAccountsWhenMapEmpty() {
 		assertEquals(0, nmr.getNetflixMap().size());
-		assertEquals("{}", nmr.getAllProgrammes());
+		assertEquals(TestConstants.EMPTYMAP, nmr.getAllProgrammes());
 	}
 
 	@Test

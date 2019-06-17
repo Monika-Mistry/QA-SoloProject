@@ -59,6 +59,13 @@ public class NetflixDatabaseRepositoryTest {
 		assertEquals("[]", ndbr.getAllProgrammes());
 	}
 	
+	@Test
+	public void addAProgram() {
+		assertEquals(TestConstants.TEST_PROGRAM1STR,ndbr.addAProgram(TestConstants.TEST_PROGRAM1STR));
+		
+	}
+	
+	
 	
 
 }

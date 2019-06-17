@@ -1,5 +1,7 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class NetflixDatabaseRepositoryTest {
 		List<Netflix> programmes = new ArrayList<Netflix>();
 		programmes.add(TestConstants.TEST_PROGRAM1);
 		Mockito.when(query.getResultList()).thenReturn(programmes);
+		assertEquals(TestConstants.TEST_PROGRAM1LIST, ndbr.getAllProgrammes());
 	}
 	
 

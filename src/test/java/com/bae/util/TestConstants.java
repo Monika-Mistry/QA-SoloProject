@@ -6,8 +6,8 @@ public class TestConstants {
 
 	public static final Netflix TEST_PROGRAM1 = new Netflix(1, "UK", "OITNB", 1);
 	public static final String TEST_PROGRAM1STR = "{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}";
-	public static final String TEST_PROGRAM1LIST = "{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}";
-	public static final String TEST_PROGRAM1MAP = "[{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}]";
+	public static final String TEST_PROGRAM1MAP = "{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}";
+	public static final String TEST_PROGRAM1LIST = "[{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}]";
 
 	public static final Netflix TEST_PROGRAM2 = new Netflix(2, "UK", "Friends",
 			2);

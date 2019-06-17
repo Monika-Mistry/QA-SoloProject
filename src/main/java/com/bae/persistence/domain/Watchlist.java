@@ -1,6 +1,7 @@
 package com.bae.persistence.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import com.bae.util.WatchStatus;
 
@@ -8,6 +9,7 @@ import com.bae.util.WatchStatus;
 public class Watchlist {
 
 	// private int userId; //later functionality
+	@Id
 	private int netflixId;
 	private WatchStatus status;
 

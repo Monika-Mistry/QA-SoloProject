@@ -1,6 +1,7 @@
 package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,8 +62,24 @@ public class NetflixDatabaseRepositoryTest {
 	
 	@Test
 	public void addAProgram() {
-		assertEquals(TestConstants.TEST_PROGRAM1STR,ndbr.addAProgram(TestConstants.TEST_PROGRAM1STR));
+		assertEquals(TestConstants.TEST_PROGRAM1STR, ndbr.addAProgram(TestConstants.TEST_PROGRAM1STR));
 		
+	}
+	
+	@Test
+	public void removeAProgramThatDoesNotExist() {
+		assertTrue(ndbr.removeAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
+		
+	}
+	
+	@Test
+	public void updateAProgramThatDoesNotExist() {
+		assertTrue(ndbr.updateAProgram(1, TestConstants.TEST_UPDATEPROGRAM).contains(TestConstants.NOPROGRAMEXISTS));
+	}
+	
+	@Test
+	public void getAProgramThatDoesNotExist() {
+		assertTrue(ndbr.getAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
 	}
 	
 	

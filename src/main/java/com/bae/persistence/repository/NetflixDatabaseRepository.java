@@ -30,7 +30,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 
 		manager.persist(newProgram);
 
-		return program;
+		return jsonUtil.getJSONForObject(newProgram);
 	}
 
 	public String getAllProgrammes() {
@@ -59,7 +59,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 			programToUpdate.setGenreId(updatedProgram.getGenreId());
 			programToUpdate.setTitle(updatedProgram.getTitle());
 
-			return jsonUtil.getJSONForObject(programToUpdate);
+			return jsonUtil.getJSONForObject(manager.find(Netflix.class, id));
 		} else {
 			return Constants.PROGRAMNOTEXIST;
 		}

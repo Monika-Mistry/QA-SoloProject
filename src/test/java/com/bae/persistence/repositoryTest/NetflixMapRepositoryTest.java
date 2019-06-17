@@ -30,7 +30,7 @@ public class NetflixMapRepositoryTest {
 		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
-		assertEquals("{\"1\":" + TestConstants.TEST_PROGRAM1STR + "}",
+		assertEquals(TestConstants.TEST_PROGRAM1MAP,
 				nmr.getAllProgrammes());
 
 	}

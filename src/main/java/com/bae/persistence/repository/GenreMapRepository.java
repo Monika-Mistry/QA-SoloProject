@@ -10,12 +10,10 @@ public class GenreMapRepository implements GenreRepository {
 	private Map<Integer, Genre> genreMap = new HashMap<>();
 
 	public String getAllGenres() {
-		// TODO Auto-generated method stub
-		return null;
+		return "{}";
 	}
 
 	public String getAGenre() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

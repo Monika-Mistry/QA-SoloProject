@@ -1,5 +1,6 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -22,6 +23,7 @@ public class GenreMapRepositoryTest {
 	@Test
 	public void returnNoGenresWhenMapEmpty() {
 		assertEquals(0, gmr.getGenreMap().size());
+		assertEquals("{}", gmr.getAllGenres());
 	}
 
 	@Test

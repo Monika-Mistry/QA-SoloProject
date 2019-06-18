@@ -1,7 +1,6 @@
 package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +43,9 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenreWhenItExists() {
-		fail("TODO");
+		Genre genre = new Genre(1, "Comedy");
+		gmr.getGenreMap().put(1, genre);
+
+		assertEquals("{\"genreId\":1,\"genre\":\"Comedy\"}", gmr.getAGenre(1));
 	}
 }

@@ -19,6 +19,7 @@ public class TestConstants {
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
 	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genre\":\"Comedy\"}";
 	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genre\":\"Comedy\"}}";
+	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genre\":\"Comedy\"}]";
 	public static final Genre TEST_GENRE1 = new Genre(1, "Comedy");
 
 }

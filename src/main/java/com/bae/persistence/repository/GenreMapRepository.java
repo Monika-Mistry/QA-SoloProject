@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bae.persistence.domain.Genre;
+import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 
 public class GenreMapRepository implements GenreRepository {
@@ -20,7 +21,7 @@ public class GenreMapRepository implements GenreRepository {
 		if (genreMap.containsKey(id)) {
 			return jsonUtil.getJSONForObject(genreMap.get(id));
 		} else {
-			return "{\"message\":\"Genre does not exist\"}";
+			return Constants.GENRENOTEXIST;
 		}
 	}
 

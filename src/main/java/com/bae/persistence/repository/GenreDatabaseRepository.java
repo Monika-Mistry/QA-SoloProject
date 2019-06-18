@@ -9,7 +9,7 @@ public class GenreDatabaseRepository implements GenreRepository {
 	}
 
 	@Override
-	public String getAGenre() {
+	public String getAGenre(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

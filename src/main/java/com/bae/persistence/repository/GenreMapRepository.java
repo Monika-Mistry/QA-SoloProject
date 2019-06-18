@@ -15,7 +15,8 @@ public class GenreMapRepository implements GenreRepository {
 		return jsonUtil.getJSONForObject(genreMap);
 	}
 
-	public String getAGenre() {
+	public String getAGenre(int id) {
+
 		return null;
 	}
 

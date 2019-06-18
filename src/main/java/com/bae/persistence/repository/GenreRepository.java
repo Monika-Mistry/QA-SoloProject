@@ -6,6 +6,6 @@ public interface GenreRepository {
 
 	public String getAllGenres();
 
-	public String getAGenre();
+	public String getAGenre(int id);
 
 }

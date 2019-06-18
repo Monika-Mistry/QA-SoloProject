@@ -21,6 +21,7 @@ import com.bae.persistence.domain.Watchlist;
 import com.bae.persistence.repository.WatchlistDatabaseRepository;
 import com.bae.util.JSONUtil;
 import com.bae.util.TestConstants;
+import com.bae.util.WatchStatus;
 
 @RunWith(MockitoJUnitRunner.class)
 public class WatchlistDatabaseRepositoryTest {
@@ -35,12 +36,14 @@ public class WatchlistDatabaseRepositoryTest {
 	private Query query;
 
 	private JSONUtil jsonUtil;
+	private Watchlist watchlist1;
 
 	@Before
 	public void setup() {
 		jsonUtil = new JSONUtil();
 		wdbr.setManager(manager);
 		wdbr.setUtil(jsonUtil);
+		watchlist1 = new Watchlist(1, WatchStatus.PENDING);
 
 	}
 
@@ -59,7 +62,7 @@ public class WatchlistDatabaseRepositoryTest {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Watchlist> watchlist = new ArrayList<>();
-		watchlist.add(TestConstants.watchlist1);
+		watchlist.add(watchlist1);
 		Mockito.when(query.getResultList()).thenReturn(watchlist);
 		assertEquals(TestConstants.TEST_WATCHLIST1LIST, wdbr.getWatchlist());
 	}
@@ -79,14 +82,14 @@ public class WatchlistDatabaseRepositoryTest {
 	@Test
 	public void removeAProgramThatDoesExist() {
 		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
-				TestConstants.watchlist1);
+				watchlist1);
 		assertEquals(TestConstants.TEST_WATCHLIST1STR, wdbr.removeAProgram(1));
 	}
 
 	@Test
 	public void updateWatchStatus() {
 		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
-				TestConstants.watchlist1);
+				watchlist1);
 		assertEquals(TestConstants.TEST_UPDATEWATCHLIST,
 				wdbr.updateWatchStatus(1, "INPROGRESS"));
 

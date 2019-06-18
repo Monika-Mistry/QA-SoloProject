@@ -39,7 +39,7 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenreWhenItDoesNotExist() {
-		fail("TODO");
+		assertEquals(TestConstants.GENRENOTEXIST, gmr.getAGenre(1));
 	}
 
 	@Test

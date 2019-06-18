@@ -14,5 +14,6 @@ public class TestConstants {
 	public static final String TEST_UPDATEPROGRAM = "{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}";
 
 	public static final String NOPROGRAMEXISTS = "Program does not exist";
+	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
 
 }

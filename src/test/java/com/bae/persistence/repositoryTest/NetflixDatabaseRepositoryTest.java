@@ -73,13 +73,32 @@ public class NetflixDatabaseRepositoryTest {
 	}
 	
 	@Test
+	public void removeAProgramThatDoesExist() {
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(TestConstants.TEST_PROGRAM1);
+		assertEquals("{\"message\": \"OITNB removed\"}",ndbr.removeAProgram(1) );
+		
+	}
+	
+	@Test
 	public void updateAProgramThatDoesNotExist() {
 		assertTrue(ndbr.updateAProgram(1, TestConstants.TEST_UPDATEPROGRAM).contains(TestConstants.NOPROGRAMEXISTS));
 	}
 	
 	@Test
+	public void updateAProgramThatDoesExist() {
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(TestConstants.TEST_PROGRAM1);
+		assertEquals(TestConstants.TEST_UPDATEPROGRAM,ndbr.updateAProgram(1, TestConstants.TEST_UPDATEPROGRAM));
+	}
+	
+	@Test
 	public void getAProgramThatDoesNotExist() {
 		assertTrue(ndbr.getAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
+	}
+	
+	@Test
+	public void getAProgramThatDoesExist() {
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(TestConstants.TEST_PROGRAM1);
+		assertEquals(TestConstants.TEST_PROGRAM1STR, ndbr.getAProgram(1));
 	}
 	
 	

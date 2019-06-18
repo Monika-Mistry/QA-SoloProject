@@ -1,22 +1,29 @@
 package com.bae.persistence.repository;
 
 import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
+
+import com.bae.util.JSONUtil;
 
 @Default
 @Transactional(TxType.SUPPORTS)
 public class GenreDatabaseRepository implements GenreRepository {
 
-	@Override
+	@PersistenceContext(unitName = "primary")
+	private EntityManager manager;
+
+	@Inject
+	private JSONUtil jsonUtil;
+
 	public String getAllGenres() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public String getAGenre(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

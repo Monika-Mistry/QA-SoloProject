@@ -23,7 +23,7 @@ import com.bae.util.JSONUtil;
 import com.bae.util.TestConstants;
 
 @RunWith(MockitoJUnitRunner.class)
-public class WatchlistDataaseRepositoryTest {
+public class WatchlistDatabaseRepositoryTest {
 
 	@InjectMocks
 	private WatchlistDatabaseRepository wdbr;

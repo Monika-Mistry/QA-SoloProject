@@ -57,7 +57,7 @@ public class GenreDatabaseRepositoryTest {
 				.thenReturn(query);
 		List<Genre> genres = new ArrayList<>();
 		Mockito.when(query.getResultList()).thenReturn(genres);
-		assertEquals(TestConstants.EMPTYLIST, gdbr.getAllGenres());
+		assertEquals("[]", gdbr.getAllGenres());
 	}
 
 	@Test

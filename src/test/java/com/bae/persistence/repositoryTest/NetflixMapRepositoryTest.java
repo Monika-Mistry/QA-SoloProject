@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.bae.persistence.repository.NetflixMapRepository;
+import com.bae.util.TestConstants;
 
 public class NetflixMapRepositoryTest {
 

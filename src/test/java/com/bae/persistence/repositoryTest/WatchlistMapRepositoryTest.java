@@ -8,6 +8,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.bae.persistence.repository.WatchlistMapRepository;
+import com.bae.util.TestConstants;
 import com.bae.util.WatchStatus;
 
 public class WatchlistMapRepositoryTest {

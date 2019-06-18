@@ -1,4 +1,4 @@
-package com.bae.persistence.repositoryTest;
+package com.bae.util;
 
 import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.domain.Watchlist;

@@ -79,8 +79,9 @@ public class WatchlistDatabaseRepositoryTest {
 
 	@Test
 	public void removeAProgramThatDoesExist() {
-		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(TestConstants.TEST_WATCHLIST1);
-		assertEquals(,wdbr.removeAProgram(1));
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
+				TestConstants.TEST_WATCHLIST1);
+		assertEquals(TestConstants.TEST_WATCHLIST1STR, wdbr.removeAProgram(1));
 	}
 
 	@Test

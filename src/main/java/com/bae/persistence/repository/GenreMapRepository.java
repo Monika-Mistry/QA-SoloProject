@@ -17,7 +17,11 @@ public class GenreMapRepository implements GenreRepository {
 
 	public String getAGenre(int id) {
 
-		return null;
+		if (genreMap.containsKey(id)) {
+			return jsonUtil.getJSONForObject(genreMap.get(id));
+		} else {
+			return "{\"message\":\"Genre does not exist\"}";
+		}
 	}
 
 	public Map<Integer, Genre> getGenreMap() {

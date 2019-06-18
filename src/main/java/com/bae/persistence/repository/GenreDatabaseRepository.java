@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
 import com.bae.persistence.domain.Genre;
+import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 
 @Default
@@ -30,7 +31,11 @@ public class GenreDatabaseRepository implements GenreRepository {
 	}
 
 	public String getAGenre(int id) {
-		return null;
+		if (manager.find(Genre.class, id) != null) {
+			return jsonUtil.getJSONForObject(manager.find(Genre.class, id));
+		} else {
+			return Constants.GENRENOTEXIST;
+		}
 	}
 
 }

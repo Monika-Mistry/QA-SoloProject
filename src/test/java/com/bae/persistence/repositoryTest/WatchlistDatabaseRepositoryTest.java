@@ -61,7 +61,7 @@ public class WatchlistDatabaseRepositoryTest {
 		List<Watchlist> watchlist = new ArrayList<>();
 		watchlist.add(TestConstants.TEST_WATCHLIST1);
 		Mockito.when(query.getResultList()).thenReturn(watchlist);
-		assertEquals(TestConstants.EMPTYLIST, wdbr.getWatchlist());
+		assertEquals(TestConstants.TEST_WATCHLIST1LIST, wdbr.getWatchlist());
 	}
 
 	@Test

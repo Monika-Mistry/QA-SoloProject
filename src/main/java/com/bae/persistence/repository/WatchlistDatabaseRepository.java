@@ -44,8 +44,10 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 
 	@Transactional(TxType.REQUIRED)
 	public String removeAProgram(int id) {
-		if (manager.find(Watchlist.class, id) != null) {
-			return jsonUtil.getJSONForObject(manager.find(Watchlist.class, id));
+		Watchlist program = manager.find(Watchlist.class, id);
+		if (program != null) {
+			manager.remove(program);
+			return jsonUtil.getJSONForObject(program);
 		} else {
 			return Constants.PROGRAMNOTEXIST;
 		}
@@ -56,13 +58,13 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 		Watchlist program = manager.find(Watchlist.class, id);
 		if (program != null) {
 			switch (status) {
-			case "Not Started":
+			case "PENDING":
 				program.setStatus(WatchStatus.PENDING);
 				return jsonUtil.getJSONForObject(program);
-			case "Watching":
+			case "INPROGRESS":
 				program.setStatus(WatchStatus.INPROGRESS);
 				return jsonUtil.getJSONForObject(program);
-			case "Watched":
+			case "COMPLETED":
 				program.setStatus(WatchStatus.COMPLETED);
 				return jsonUtil.getJSONForObject(program);
 			default:
@@ -72,6 +74,14 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 		} else {
 			return Constants.PROGRAMNOTEXIST;
 		}
+	}
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.jsonUtil = jsonUtil;
 	}
 
 }

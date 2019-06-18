@@ -47,7 +47,7 @@ public class GenreDatabaseRepositoryTest {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Genre> genres = new ArrayList<>();
-		genres.add(TestConstants.TEST_GENRE1);
+		genres.add(TestConstants.GENRE1);
 		Mockito.when(query.getResultList()).thenReturn(genres);
 		assertEquals(TestConstants.TEST_GENRE1LIST, gdbr.getAllGenres());
 	}
@@ -69,7 +69,7 @@ public class GenreDatabaseRepositoryTest {
 	@Test
 	public void getAGenreThatDoesExist() {
 		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
-				TestConstants.TEST_GENRE1);
+				TestConstants.GENRE1);
 		assertEquals(TestConstants.TEST_GENRE1STR, gdbr.getAGenre(1));
 	}
 

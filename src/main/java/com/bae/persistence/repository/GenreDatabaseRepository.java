@@ -25,7 +25,7 @@ public class GenreDatabaseRepository implements GenreRepository {
 	private JSONUtil jsonUtil;
 
 	public String getAllGenres() {
-		Query query = manager.createQuery("SELECT g FROM Genre g");
+		Query query = manager.createQuery(Constants.GETALLGENREQUERY);
 		List<Genre> genres = query.getResultList();
 		return jsonUtil.getJSONForObject(genres);
 	}

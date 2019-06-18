@@ -1,8 +1,12 @@
 package com.bae.persistence.repositoryTest;
 
+import static org.junit.Assert.fail;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -24,5 +28,43 @@ public class WatchlistDataaseRepositoryTest {
 	private Query query;
 
 	private JSONUtil jsonUtil;
+
+	@Before
+	public void setup() {
+		jsonUtil = new JSONUtil();
+		wdbr.setManager(manager);
+		wdbr.setUtil(jsonUtil);
+
+	}
+
+	@Test
+	public void returnNoProgrammesWhenDBEmpty() {
+		fail("TODO");
+	}
+
+	@Test
+	public void returnProgrammesWhenDBIsFilled() {
+		fail("TODO");
+	}
+
+	@Test
+	public void addAProgram() {
+		fail("TODO");
+	}
+
+	@Test
+	public void removeAProgramThatDoesNotExist() {
+		fail("TODO");
+	}
+
+	@Test
+	public void removeAProgramThatDoesExist() {
+		fail("TODO");
+	}
+
+	@Test
+	public void updateWatchStatus() {
+		fail("TODO");
+	}
 
 }

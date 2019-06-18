@@ -1,6 +1,7 @@
 package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -72,12 +73,14 @@ public class WatchlistDatabaseRepositoryTest {
 
 	@Test
 	public void removeAProgramThatDoesNotExist() {
-		fail("TODO");
+		assertTrue(wdbr.removeAProgram(1).contains(
+				TestConstants.NOPROGRAMEXISTS));
 	}
 
 	@Test
 	public void removeAProgramThatDoesExist() {
-		fail("TODO");
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(TestConstants.TEST_WATCHLIST1);
+		assertEquals(,wdbr.removeAProgram(1));
 	}
 
 	@Test

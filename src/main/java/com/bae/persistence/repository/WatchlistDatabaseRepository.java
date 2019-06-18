@@ -44,8 +44,10 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 
 	@Transactional(TxType.REQUIRED)
 	public String removeAProgram(int id) {
-		if (manager.find(Watchlist.class, id) != null) {
-			return jsonUtil.getJSONForObject(manager.find(Watchlist.class, id));
+		Watchlist program = manager.find(Watchlist.class, id);
+		if (program != null) {
+			manager.remove(program);
+			return jsonUtil.getJSONForObject(program);
 		} else {
 			return Constants.PROGRAMNOTEXIST;
 		}

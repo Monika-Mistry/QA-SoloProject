@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.bae.persistence.repository.GenreMapRepository;
+import com.bae.util.TestConstants;
 
 public class GenreMapRepositoryTest {
 

@@ -19,6 +19,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.bae.persistence.domain.Genre;
 import com.bae.persistence.repository.GenreDatabaseRepository;
 import com.bae.util.JSONUtil;
+import com.bae.util.TestConstants;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GenreDatabaseRepositoryTest {

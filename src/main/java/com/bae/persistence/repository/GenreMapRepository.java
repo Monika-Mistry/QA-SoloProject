@@ -4,13 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bae.persistence.domain.Genre;
+import com.bae.util.JSONUtil;
 
 public class GenreMapRepository implements GenreRepository {
 
 	private Map<Integer, Genre> genreMap = new HashMap<>();
+	private JSONUtil jsonUtil = new JSONUtil();
 
 	public String getAllGenres() {
-		return "{}";
+		return jsonUtil.getJSONForObject(genreMap);
 	}
 
 	public String getAGenre() {

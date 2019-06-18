@@ -30,7 +30,7 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void returnProgrammesWhenMapFilled() {
-		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(1, TestConstants.watchlist1);
 
 		assertEquals("{\"1\":" + TestConstants.TEST_WATCHLIST1STR + "}",
 				wmr.getWatchlist());
@@ -56,7 +56,7 @@ public class WatchlistMapRepositoryTest {
 	@Ignore
 	@Test
 	public void addProgramAlreadyInWL() {
-		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(1, TestConstants.watchlist1);
 		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
 
 		assertEquals(1, wmr.getWatchlistMap().size());
@@ -67,7 +67,7 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void removeProgramFromWL() {
-		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(1, TestConstants.watchlist1);
 
 		wmr.removeAProgram(1);
 
@@ -76,7 +76,7 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void removeTwoProgrammesFromWL() {
-		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(1, TestConstants.watchlist1);
 		wmr.getWatchlistMap().put(2, TestConstants.TEST_WATCHLIST2);
 
 		wmr.removeAProgram(1);
@@ -92,7 +92,7 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void updateWatchStatusForProgramInWL() {
-		wmr.getWatchlistMap().put(1, TestConstants.TEST_WATCHLIST1);
+		wmr.getWatchlistMap().put(1, TestConstants.watchlist1);
 		wmr.updateWatchStatus(1, "Watching");
 
 		assertTrue(wmr.getWatchlistMap().get(1).getStatus()

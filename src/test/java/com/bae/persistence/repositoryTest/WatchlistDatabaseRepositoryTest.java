@@ -2,7 +2,6 @@ package com.bae.persistence.repositoryTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +59,7 @@ public class WatchlistDatabaseRepositoryTest {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Watchlist> watchlist = new ArrayList<>();
-		watchlist.add(TestConstants.TEST_WATCHLIST1);
+		watchlist.add(TestConstants.watchlist1);
 		Mockito.when(query.getResultList()).thenReturn(watchlist);
 		assertEquals(TestConstants.TEST_WATCHLIST1LIST, wdbr.getWatchlist());
 	}
@@ -80,13 +79,17 @@ public class WatchlistDatabaseRepositoryTest {
 	@Test
 	public void removeAProgramThatDoesExist() {
 		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
-				TestConstants.TEST_WATCHLIST1);
+				TestConstants.watchlist1);
 		assertEquals(TestConstants.TEST_WATCHLIST1STR, wdbr.removeAProgram(1));
 	}
 
 	@Test
 	public void updateWatchStatus() {
-		fail("TODO");
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
+				TestConstants.watchlist1);
+		assertEquals(TestConstants.TEST_UPDATEWATCHLIST,
+				wdbr.updateWatchStatus(1, "INPROGRESS"));
+
 	}
 
 }

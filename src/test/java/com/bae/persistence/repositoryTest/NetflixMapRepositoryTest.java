@@ -8,18 +8,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.repository.NetflixMapRepository;
 import com.bae.util.TestConstants;
 
 public class NetflixMapRepositoryTest {
 
 	private NetflixMapRepository nmr;
+	private Netflix program1;
 
 	@Before
 	public void setup() {
 		nmr = new NetflixMapRepository();
+		program1 = new Netflix(1, "UK", "OITNB", 1);
 	}
-	
+
 	@After
 	public void teardown() {
 		nmr.getNetflixMap().clear();
@@ -33,11 +36,10 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void returnProgrammesWhenMapIsFilled() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
-		assertEquals(TestConstants.TEST_PROGRAM1MAP,
-				nmr.getAllProgrammes());
+		assertEquals(TestConstants.TEST_PROGRAM1MAP, nmr.getAllProgrammes());
 
 	}
 
@@ -63,7 +65,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void addAProgramWhenItAlreadyExists() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 
 		nmr.addAProgram(TestConstants.TEST_PROGRAM1STR);
 
@@ -76,7 +78,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void deleteAProgram() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 
 		nmr.removeAProgram(1);
 
@@ -86,7 +88,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void deleteTwoProgrammes() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 		nmr.getNetflixMap().put(2, TestConstants.TEST_PROGRAM2);
 
 		nmr.removeAProgram(1);
@@ -104,7 +106,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void updateAProgram() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 
 		nmr.updateAProgram(1, TestConstants.TEST_UPDATEPROGRAM);
 
@@ -113,7 +115,7 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void getAProgramThatExists() {
-		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
+		nmr.getNetflixMap().put(1, program1);
 
 		assertTrue(nmr.getAProgram(1).contains("OITNB"));
 	}

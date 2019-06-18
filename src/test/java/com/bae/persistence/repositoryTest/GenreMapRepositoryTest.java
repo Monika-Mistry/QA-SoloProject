@@ -25,7 +25,7 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenresWhenMapFilled() {
-		gmr.getGenreMap().put(1, TestConstants.TEST_GENRE1);
+		gmr.getGenreMap().put(1, TestConstants.GENRE1);
 
 		assertEquals(1, gmr.getGenreMap().size());
 		assertEquals(TestConstants.TEST_GENRE1MAP, gmr.getAllGenres());
@@ -38,7 +38,7 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenreWhenItExists() {
-		gmr.getGenreMap().put(1, TestConstants.TEST_GENRE1);
+		gmr.getGenreMap().put(1, TestConstants.GENRE1);
 
 		assertEquals(TestConstants.TEST_GENRE1STR, gmr.getAGenre(1));
 	}

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.bae.persistence.domain.Genre;
 import com.bae.persistence.repository.GenreMapRepository;
 import com.bae.util.JSONUtil;
 
@@ -28,12 +27,10 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenresWhenMapFilled() {
-		Genre genre = new Genre(1, "Comedy");
-		gmr.getGenreMap().put(1, genre);
+		gmr.getGenreMap().put(1, TestConstants.TEST_GENRE1);
 
 		assertEquals(1, gmr.getGenreMap().size());
-		assertEquals("{\"1\":{\"genreId\":1,\"genre\":\"Comedy\"}}",
-				gmr.getAllGenres());
+		assertEquals(TestConstants.TEST_GENRE1MAP, gmr.getAllGenres());
 	}
 
 	@Test
@@ -43,9 +40,8 @@ public class GenreMapRepositoryTest {
 
 	@Test
 	public void returnGenreWhenItExists() {
-		Genre genre = new Genre(1, "Comedy");
-		gmr.getGenreMap().put(1, genre);
+		gmr.getGenreMap().put(1, TestConstants.TEST_GENRE1);
 
-		assertEquals("{\"genreId\":1,\"genre\":\"Comedy\"}", gmr.getAGenre(1));
+		assertEquals(TestConstants.TEST_GENRE1STR, gmr.getAGenre(1));
 	}
 }

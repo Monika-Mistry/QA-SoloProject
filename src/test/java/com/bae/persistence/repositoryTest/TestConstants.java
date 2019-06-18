@@ -1,5 +1,6 @@
 package com.bae.persistence.repositoryTest;
 
+import com.bae.persistence.domain.Genre;
 import com.bae.persistence.domain.Netflix;
 
 public class TestConstants {
@@ -14,6 +15,10 @@ public class TestConstants {
 	public static final String TEST_UPDATEPROGRAM = "{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}";
 
 	public static final String NOPROGRAMEXISTS = "Program does not exist";
+
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
+	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genre\":\"Comedy\"}";
+	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genre\":\"Comedy\"}}";
+	public static final Genre TEST_GENRE1 = new Genre(1, "Comedy");
 
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.enterprise.inject.Alternative;
 
 import com.bae.persistence.domain.Netflix;
+import com.bae.util.Constants;
 import com.bae.util.JSONUtil;
 
 @Alternative
@@ -29,7 +30,7 @@ public class NetflixMapRepository implements NetflixRepository {
 		if (netflixMap.containsKey(id)) {
 			return jsonUtil.getJSONForObject(netflixMap.get(id));
 		} else {
-			return "{\"message\": \"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 
 	}
@@ -49,7 +50,7 @@ public class NetflixMapRepository implements NetflixRepository {
 		}
 
 		else {
-			return "{\"message\": \"Program does not exist\"}";
+			return Constants.PROGRAMNOTEXIST;
 		}
 	}
 

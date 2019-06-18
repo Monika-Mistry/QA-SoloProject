@@ -98,7 +98,8 @@ public class NetflixMapRepositoryTest {
 
 	@Test
 	public void removeAProgramWhenItDoesNotExist() {
-		assertTrue(nmr.removeAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
+		assertTrue(nmr.removeAProgram(1)
+				.contains(TestConstants.NOPROGRAMEXISTS));
 	}
 
 	@Test

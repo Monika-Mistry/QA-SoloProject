@@ -66,7 +66,8 @@ public class WatchlistDatabaseRepositoryTest {
 
 	@Test
 	public void addAProgram() {
-		fail("TODO");
+		assertEquals(TestConstants.TEST_WATCHLIST1STR,
+				wdbr.addAProgram(TestConstants.TEST_WATCHLIST1STR));
 	}
 
 	@Test

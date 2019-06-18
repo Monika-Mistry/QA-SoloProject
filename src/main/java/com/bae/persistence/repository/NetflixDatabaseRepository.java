@@ -75,5 +75,13 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 			return Constants.PROGRAMNOTEXIST;
 		}
 	}
+	
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public void setUtil(JSONUtil jsonUtil) {
+		this.jsonUtil = jsonUtil;
+	}
 
 }

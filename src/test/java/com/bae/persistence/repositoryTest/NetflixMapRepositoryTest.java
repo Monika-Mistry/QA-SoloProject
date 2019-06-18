@@ -4,10 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.bae.persistence.repository.NetflixMapRepository;
+import com.bae.util.TestConstants;
 
 public class NetflixMapRepositoryTest {
 
@@ -17,19 +19,24 @@ public class NetflixMapRepositoryTest {
 	public void setup() {
 		nmr = new NetflixMapRepository();
 	}
-
-	@Test
-	public void returnNoAccountsWhenMapEmpty() {
-		assertEquals(0, nmr.getNetflixMap().size());
-		assertEquals("{}", nmr.getAllProgrammes());
+	
+	@After
+	public void teardown() {
+		nmr.getNetflixMap().clear();
 	}
 
 	@Test
-	public void returnAccountsWhenMapIsFilled() {
+	public void returnNoProgrammesWhenMapEmpty() {
+		assertEquals(0, nmr.getNetflixMap().size());
+		assertEquals(TestConstants.EMPTYMAP, nmr.getAllProgrammes());
+	}
+
+	@Test
+	public void returnProgrammesWhenMapIsFilled() {
 		nmr.getNetflixMap().put(1, TestConstants.TEST_PROGRAM1);
 
 		assertEquals(1, nmr.getNetflixMap().size());
-		assertEquals("{\"1\":" + TestConstants.TEST_PROGRAM1STR + "}",
+		assertEquals(TestConstants.TEST_PROGRAM1MAP,
 				nmr.getAllProgrammes());
 
 	}

@@ -74,4 +74,12 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 		}
 	}
 
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.jsonUtil = jsonUtil;
+	}
+
 }

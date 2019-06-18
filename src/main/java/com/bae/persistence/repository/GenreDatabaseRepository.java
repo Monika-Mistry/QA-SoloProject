@@ -38,4 +38,12 @@ public class GenreDatabaseRepository implements GenreRepository {
 		}
 	}
 
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.jsonUtil = jsonUtil;
+	}
+
 }

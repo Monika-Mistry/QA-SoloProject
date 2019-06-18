@@ -11,7 +11,7 @@ public class Constants {
 	// Query
 	public static final String GETALLNETFLIXQUERY = "SELECT n FROM Netflix n";
 	public static final String GETWATCHLISTQUERY = "SELECT w FROM Watchlist w";
-	public static final string GETALLGENREQUERY = "SELECT g FROM Genre g";
+	public static final String GETALLGENREQUERY = "SELECT g FROM Genre g";
 
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
 

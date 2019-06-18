@@ -6,17 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.bae.persistence.repository.GenreMapRepository;
-import com.bae.util.JSONUtil;
 
 public class GenreMapRepositoryTest {
 
 	private GenreMapRepository gmr;
-	private JSONUtil json;
 
 	@Before
 	public void setup() {
 		gmr = new GenreMapRepository();
-		json = new JSONUtil();
 	}
 
 	@Test

@@ -47,7 +47,7 @@ const populateDropDown = (response, drpdwn, value, field) => {
     //populate dropdown
     results.forEach(item => {
         let option = document.createElement('option');
-        console.log(item.value);
+        console.log(item);
         option.value = item.value;
         console.log(item.field);
         option.innerHTML = item.field;

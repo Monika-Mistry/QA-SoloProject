@@ -9,6 +9,8 @@ public interface NetflixRepository {
 	public String getAllProgrammes();
 
 	public String getAProgram(int id);
+	
+	public String getTitle(int id);
 
 	// U
 	public String updateAProgram(int id, String program);

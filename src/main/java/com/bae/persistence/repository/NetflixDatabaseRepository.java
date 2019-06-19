@@ -84,4 +84,10 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 		this.jsonUtil = jsonUtil;
 	}
 
+	@Override
+	public String getTitle(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

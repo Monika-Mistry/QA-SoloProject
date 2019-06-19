@@ -90,17 +90,42 @@ public class WatchlistMapRepositoryTest {
 	}
 
 	@Test
-	public void updateWatchStatusForProgramInWL() {
+	public void updateWatchStatusPendingForProgramInWL() {
 		wmr.getWatchlistMap().put(1, watchlist1);
-		wmr.updateWatchStatus(1, TestConstants.INPROGRESSSTR);
 
+		wmr.updateWatchStatus(1, TestConstants.PENDINGSTR);
+		assertTrue(wmr.getWatchlistMap().get(1).getStatus().equals(WatchStatus.PENDING));
+
+	}
+
+	@Test
+	public void updateWatchStatusInProgressForProgramInWL() {
+		wmr.getWatchlistMap().put(1, watchlist1);
+
+		wmr.updateWatchStatus(1, TestConstants.INPROGRESSSTR);
 		assertTrue(wmr.getWatchlistMap().get(1).getStatus().equals(WatchStatus.INPROGRESS));
+
+	}
+
+	@Test
+	public void updateWatchStatusCompletedForProgramInWL() {
+		wmr.getWatchlistMap().put(1, watchlist1);
+
+		wmr.updateWatchStatus(1, TestConstants.COMPLETESTR);
+		assertTrue(wmr.getWatchlistMap().get(1).getStatus().equals(WatchStatus.COMPLETED));
+
 	}
 
 	@Test
 	public void updateWatchStatusForProgramNotInWL() {
 		assertTrue(wmr.updateWatchStatus(1, TestConstants.INPROGRESSSTR).contains(TestConstants.NOPROGRAMEXISTS));
 
+	}
+	
+	@Test
+	public void updateWatchStatusForProgramInWL() {
+		wmr.getWatchlistMap().put(1, watchlist1);
+		assertEquals(TestConstants.TEST_WATCHLIST1STR, wmr.updateWatchStatus(1, "aaa"));
 	}
 
 }

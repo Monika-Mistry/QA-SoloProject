@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Netflix {
@@ -18,6 +20,9 @@ public class Netflix {
 	private String title;
 	@Column(length = 2)
 	private int genreId;
+	@ManyToOne
+	@JoinColumn(name = "genre")
+	private Genre genre;
 
 	public Netflix() {
 

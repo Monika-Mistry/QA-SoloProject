@@ -51,5 +51,12 @@ public class NetflixController {
 	public String removeAProgram(@PathParam("id") int id) {
 		return service.removeAProgram(id);
 	}
+	
+	@Path("getTitle/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getTitle(int id) {
+		return service.getTitle(id);
+	}
 
 }

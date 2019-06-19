@@ -34,8 +34,7 @@ public class WatchlistMapRepositoryTest {
 	public void returnProgrammesWhenMapFilled() {
 		wmr.getWatchlistMap().put(1, watchlist1);
 
-		assertEquals("{\"1\":" + TestConstants.TEST_WATCHLIST1STR + "}",
-				wmr.getWatchlist());
+		assertEquals("{\"1\":" + TestConstants.TEST_WATCHLIST1STR + "}", wmr.getWatchlist());
 	}
 
 	@Test
@@ -61,6 +60,7 @@ public class WatchlistMapRepositoryTest {
 		wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR);
 
 		assertEquals(1, wmr.getWatchlistMap().size());
+		assertEquals(TestConstants.PROGRAMEXISTS, wmr.addAProgram(TestConstants.TEST_WATCHLIST1STR));
 
 	}
 
@@ -94,14 +94,12 @@ public class WatchlistMapRepositoryTest {
 		wmr.getWatchlistMap().put(1, watchlist1);
 		wmr.updateWatchStatus(1, "Watching");
 
-		assertTrue(wmr.getWatchlistMap().get(1).getStatus()
-				.equals(WatchStatus.INPROGRESS));
+		assertTrue(wmr.getWatchlistMap().get(1).getStatus().equals(WatchStatus.INPROGRESS));
 	}
 
 	@Test
 	public void updateWatchStatusForProgramNotInWL() {
-		assertTrue(wmr.updateWatchStatus(1, "watching").contains(
-				"does not exist"));
+		assertTrue(wmr.updateWatchStatus(1, "watching").contains("does not exist"));
 
 	}
 

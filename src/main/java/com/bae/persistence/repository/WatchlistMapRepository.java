@@ -19,7 +19,7 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	public String addAProgram(String program) {
 		Watchlist newProgram = json.getObjectForJSON(program, Watchlist.class);
 
-		if (!watchlistMap.containsValue(newProgram)) {
+		if (!watchlistMap.containsKey(newProgram.getNetflixId())) {
 
 			watchlistMap.put(newProgram.getNetflixId(), newProgram);
 			return Constants.PROGRAMADDED;

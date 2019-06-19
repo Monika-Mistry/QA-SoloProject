@@ -5,6 +5,8 @@ import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.domain.Watchlist;
 
 public class TestConstants {
+	
+	//NetflixRepo
 
 	public static final String TEST_PROGRAM1STR = "{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}";
 	public static final String TEST_PROGRAM1MAP = "{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}";
@@ -16,8 +18,8 @@ public class TestConstants {
 
 	public static final String TEST_UPDATEPROGRAM = "{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}";
 
-	public static final String NOPROGRAMEXISTS = "Program does not exist";
 
+	//WatchlistRepo
 	public static final String TEST_WATCHLIST1STR = "{\"netflixId\":1,\"status\":\"PENDING\"}";
 	public static final String TEST_WATCHLIST1LIST = "[{\"netflixId\":1,\"status\":\"PENDING\"}]";
 
@@ -30,6 +32,8 @@ public class TestConstants {
 	// All
 	public static final String EMPTYLIST = "[]";
 	public static final String EMPTYMAP = "{}";
+	public static final String NOPROGRAMEXISTS = "Program does not exist";
+	public static final String PROGRAMEXISTS = "{\"message\": \"Program already exists\"}";
 
 	// GenreRepo
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";

@@ -41,5 +41,11 @@ public class TestConstants {
 	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genre\":\"Comedy\"}}";
 	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genre\":\"Comedy\"}]";
 	public static final Genre GENRE1 = new Genre(1, "Comedy");
+	
+	//WatchStatus String equivalents
+	public static final String PENDINGSTR = "PENDING";
+	public static final String INPROGRESSSTR = "INPROGRESS";
+	public static final String COMPLETESTR = "COMPLETE";
+
 
 }

@@ -45,15 +45,15 @@ public class WatchlistMapRepository implements WatchlistRepository {
 		if (watchlistMap.containsKey(id)) {
 			Watchlist program = watchlistMap.get(id);
 			switch (status) {
-			case "Not Started":
+			case Constants.PENDINGSTR:
 				program.setStatus(WatchStatus.PENDING);
 				watchlistMap.replace(id, program);
 				break;
-			case "Watching":
+			case Constants.INPROGRESSSTR:
 				program.setStatus(WatchStatus.INPROGRESS);
 				watchlistMap.replace(id, program);
 				break;
-			case "Watched":
+			case Constants.COMPLETESTR:
 				program.setStatus(WatchStatus.COMPLETED);
 				watchlistMap.replace(id, program);
 				break;

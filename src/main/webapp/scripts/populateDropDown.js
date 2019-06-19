@@ -48,9 +48,9 @@ const populateDropDown = (response, drpdwn, value, field) => {
     results.forEach(item => {
         let option = document.createElement('option');
         console.log(item);
-        option.value = item.value;
+        option.value = item[value];
         console.log(item.field);
-        option.innerHTML = item.field;
+        option.innerHTML = item[field];
         dropdown.appendChild(option);
     });
 

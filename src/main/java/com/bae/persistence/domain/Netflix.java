@@ -12,8 +12,7 @@ public class Netflix {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int netflixId;
-	@Column(length = 3)
-	// 3 letter country code
+	@Column(length = 20)
 	private String country;
 	@Column(length = 100)
 	private String title;

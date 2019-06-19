@@ -17,7 +17,7 @@ public class Constants {
 	//WatchStatus String equivalents
 	public static final String PENDINGSTR = "PENDING";
 	public static final String INPROGRESSSTR = "INPROGRESS";
-	public static final String COMPLETESTR = "COMPLETE";
+	public static final String COMPLETESTR = "COMPLETED";
 
 	
 	

@@ -13,19 +13,19 @@ const getTitles = () => {
 };
 
 const getGenres = () => {
-    makeRequest("GET", getAllGenres).then(response => {
+    makeRequest("GET", getAllGenre).then(response => {
         populateGenres(response);
     }).catch(error => console.log(error.message));
 };
 
 const populateTitles = programmes => {
-    populateDropDown(programmes, "netflixProgram", "netflixId", "title");
+    populateDropDown(programmes, "netflixProgram", netflixId, title);
 
 
 };
 
 const populateGenres = genres => {
-    populateDropDown(genres, "genre", "genreId", "genre");
+    populateDropDown(genres, "genre", genreId, genre);
 };
 
 const populateDropDown = (response, drpdwn, value, field) => {

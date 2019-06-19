@@ -60,8 +60,10 @@ public class NetflixMapRepository implements NetflixRepository {
 
 
 	public String getTitle(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		if(netflixMap.containsKey(id)) {
+			return netflixMap.get(id).getTitle();
+		}
+		return Constants.PROGRAMNOTEXIST;
 	}
 
 }

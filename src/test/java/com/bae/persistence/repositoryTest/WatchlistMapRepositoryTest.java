@@ -86,20 +86,20 @@ public class WatchlistMapRepositoryTest {
 
 	@Test
 	public void removeProgramNotInWL() {
-		assertTrue(wmr.removeAProgram(1).contains("does not exist"));
+		assertTrue(wmr.removeAProgram(1).contains(TestConstants.NOPROGRAMEXISTS));
 	}
 
 	@Test
 	public void updateWatchStatusForProgramInWL() {
 		wmr.getWatchlistMap().put(1, watchlist1);
-		wmr.updateWatchStatus(1, "Watching");
+		wmr.updateWatchStatus(1, TestConstants.INPROGRESSSTR);
 
 		assertTrue(wmr.getWatchlistMap().get(1).getStatus().equals(WatchStatus.INPROGRESS));
 	}
 
 	@Test
 	public void updateWatchStatusForProgramNotInWL() {
-		assertTrue(wmr.updateWatchStatus(1, "watching").contains("does not exist"));
+		assertTrue(wmr.updateWatchStatus(1, TestConstants.INPROGRESSSTR).contains(TestConstants.NOPROGRAMEXISTS));
 
 	}
 

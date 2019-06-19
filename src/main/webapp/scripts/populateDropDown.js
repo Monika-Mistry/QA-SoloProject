@@ -31,6 +31,7 @@ const populateGenres = genres => {
 const populateDropDown = (response, drpdwn, value, field) => {
     let results = [];
     resultObj = JSON.parse(response);
+    console.log(resultObj);
     //add to array
     if (Array.isArray(resultObj)) {
         results = results.concat(resultObj);
@@ -46,7 +47,9 @@ const populateDropDown = (response, drpdwn, value, field) => {
     //populate dropdown
     results.forEach(item => {
         let option = document.createElement('option');
+        console.log(item.value);
         option.value = item.value;
+        console.log(item.field);
         option.innerHTML = item.field;
         dropdown.appendChild(option);
     });

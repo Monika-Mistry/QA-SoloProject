@@ -43,7 +43,7 @@ public class GenreDatabaseRepositoryTest {
 	}
 
 	@Test
-	public void returnAccountsWhenDBEmpty() {
+	public void returnGenresWhenDBFilled() {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Genre> genres = new ArrayList<>();
@@ -53,7 +53,7 @@ public class GenreDatabaseRepositoryTest {
 	}
 
 	@Test
-	public void returnAccountsWhenDBFilled() {
+	public void returnGenresWhenDBEmpty() {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Genre> genres = new ArrayList<>();

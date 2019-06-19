@@ -47,7 +47,7 @@ public class NetflixDatabaseRepositoryTest {
 	}
 
 	@Test
-	public void returnAccountsWhenMapIsFilled() {
+	public void returnProgrammesWhenMapIsFilled() {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Netflix> programmes = new ArrayList<Netflix>();
@@ -57,7 +57,7 @@ public class NetflixDatabaseRepositoryTest {
 	}
 
 	@Test
-	public void returnNoAccountsWhenMapEmpty() {
+	public void returnNoProgrammesWhenMapEmpty() {
 		Mockito.when(manager.createQuery(Mockito.anyString()))
 				.thenReturn(query);
 		List<Netflix> programmes = new ArrayList<Netflix>();

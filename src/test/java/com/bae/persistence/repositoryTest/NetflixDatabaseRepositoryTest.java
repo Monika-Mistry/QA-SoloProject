@@ -113,4 +113,10 @@ public class NetflixDatabaseRepositoryTest {
 		assertEquals(TestConstants.TEST_PROGRAM1STR, ndbr.getAProgram(1));
 	}
 
+	@Test
+	public void getAProgramTitleThatDoesExist() {
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(
+				program1);
+		assertEquals(TestConstants.TEST_PROGRAM1TITLE, ndbr.getTitle(1));
+	}
 }

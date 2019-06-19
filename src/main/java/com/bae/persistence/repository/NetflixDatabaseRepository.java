@@ -85,8 +85,11 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	}
 
 	public String getTitle(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Netflix program = manager.find(Netflix.class,id);
+		if(program != null) {
+			return program.getTitle();
+		}
+		return Constants.PROGRAMNOTEXIST;
 	}
 
 }

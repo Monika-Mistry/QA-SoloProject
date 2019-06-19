@@ -36,9 +36,9 @@ public class TestConstants {
 
 	// GenreRepo
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
-	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genre\":\"Comedy\",\"netflixList\":[]}";
-	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genre\":\"Comedy\",\"netflixList\":[]}}";
-	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genre\":\"Comedy\",\"netflixList\":[]}]";
+	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genreName\":\"Comedy\"}";
+	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genreName\":\"Comedy\"}}";
+	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genreName\":\"Comedy\"}]";
 	public static final Genre GENRE1 = new Genre(1, "Comedy");
 
 	// WatchStatus String equivalents

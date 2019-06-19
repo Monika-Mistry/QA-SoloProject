@@ -29,4 +29,9 @@ public class NetflixServiceImpl implements NetflixService {
 		return netflixRepository.removeAProgram(id);
 	}
 
+
+	public String getTitle(int id) {
+		return netflixRepository.getTitle(id);
+	}
+
 }

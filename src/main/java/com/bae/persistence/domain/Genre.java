@@ -8,7 +8,7 @@ public class Genre {
 
 	@Id
 	private int genreId;
-	private String genre;
+	private String genreName;
 
 	public Genre() {
 	}
@@ -16,7 +16,7 @@ public class Genre {
 	public Genre(int genreId, String genre) {
 		super();
 		this.genreId = genreId;
-		this.genre = genre;
+		this.genreName = genre;
 	}
 
 	public int getGenreId() {
@@ -28,10 +28,10 @@ public class Genre {
 	}
 
 	public String getGenre() {
-		return genre;
+		return genreName;
 	}
 
 	public void setGenre(String genre) {
-		this.genre = genre;
+		this.genreName = genre;
 	}
 }

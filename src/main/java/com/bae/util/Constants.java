@@ -10,16 +10,13 @@ public class Constants {
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
 
 	// Query
-	public static final String GETALLNETFLIXQUERY = "SELECT n FROM Netflix n";
+	public static final String GETALLNETFLIXQUERY = "SELECT n.netflixId, n.title, n.country, g.genreName FROM Netflix n, Genre g WHERE n.genreId = g.genreId";
 	public static final String GETWATCHLISTQUERY = "SELECT w FROM Watchlist w";
 	public static final String GETALLGENREQUERY = "SELECT g FROM Genre g";
-	
-	//WatchStatus String equivalents
+
+	// WatchStatus String equivalents
 	public static final String PENDINGSTR = "PENDING";
 	public static final String INPROGRESSSTR = "INPROGRESS";
 	public static final String COMPLETESTR = "COMPLETED";
-
-	
-	
 
 }

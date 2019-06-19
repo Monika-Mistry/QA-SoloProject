@@ -5,8 +5,8 @@ import com.bae.persistence.domain.Netflix;
 import com.bae.persistence.domain.Watchlist;
 
 public class TestConstants {
-	
-	//NetflixRepo
+
+	// NetflixRepo
 
 	public static final String TEST_PROGRAM1STR = "{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}";
 	public static final String TEST_PROGRAM1MAP = "{\"1\":{\"netflixId\":1,\"country\":\"UK\",\"title\":\"OITNB\",\"genreId\":1}}";
@@ -18,8 +18,7 @@ public class TestConstants {
 
 	public static final String TEST_UPDATEPROGRAM = "{\"netflixId\":1,\"country\":\"USA\",\"title\":\"OITNB\",\"genreId\":1}";
 
-
-	//WatchlistRepo
+	// WatchlistRepo
 	public static final String TEST_WATCHLIST1STR = "{\"netflixId\":1,\"status\":\"PENDING\"}";
 	public static final String TEST_WATCHLIST1LIST = "[{\"netflixId\":1,\"status\":\"PENDING\"}]";
 
@@ -37,15 +36,14 @@ public class TestConstants {
 
 	// GenreRepo
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";
-	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genre\":\"Comedy\"}";
-	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genre\":\"Comedy\"}}";
-	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genre\":\"Comedy\"}]";
+	public static final String TEST_GENRE1STR = "{\"genreId\":1,\"genreName\":\"Comedy\"}";
+	public static final String TEST_GENRE1MAP = "{\"1\":{\"genreId\":1,\"genreName\":\"Comedy\"}}";
+	public static final String TEST_GENRE1LIST = "[{\"genreId\":1,\"genreName\":\"Comedy\"}]";
 	public static final Genre GENRE1 = new Genre(1, "Comedy");
-	
-	//WatchStatus String equivalents
+
+	// WatchStatus String equivalents
 	public static final String PENDINGSTR = "PENDING";
 	public static final String INPROGRESSSTR = "INPROGRESS";
 	public static final String COMPLETESTR = "COMPLETED";
-
 
 }

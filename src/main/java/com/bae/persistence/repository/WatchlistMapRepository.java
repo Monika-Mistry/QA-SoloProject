@@ -44,24 +44,20 @@ public class WatchlistMapRepository implements WatchlistRepository {
 	public String updateWatchStatus(int id, String status) {
 		if (watchlistMap.containsKey(id)) {
 			Watchlist program = watchlistMap.get(id);
-			switch (status) {
-			case Constants.PENDINGSTR:
+
+			if (status.equals(Constants.PENDINGSTR)) {
 				program.setStatus(WatchStatus.PENDING);
-				watchlistMap.replace(id, program);
-				break;
-			case Constants.INPROGRESSSTR:
+				return json.getJSONForObject(program);
+			} else if (status.equals(Constants.INPROGRESSSTR)) {
 				program.setStatus(WatchStatus.INPROGRESS);
-				watchlistMap.replace(id, program);
-				break;
-			case Constants.COMPLETESTR:
+				return json.getJSONForObject(program);
+			} else if (status.equals(Constants.COMPLETESTR)) {
 				program.setStatus(WatchStatus.COMPLETED);
-				watchlistMap.replace(id, program);
-				break;
-			default:
-				watchlistMap.replace(id, program);
-				break;
+				return json.getJSONForObject(program);
+			} else {
+				return json.getJSONForObject(program);
+
 			}
-			return json.getJSONForObject(program);
 		} else {
 			return Constants.PROGRAMNOTEXIST;
 		}

@@ -57,21 +57,21 @@ public class WatchlistDatabaseRepository implements WatchlistRepository {
 	public String updateWatchStatus(int id, String status) {
 		Watchlist program = manager.find(Watchlist.class, id);
 		if (program != null) {
-			switch (status) {
-			case Constants.PENDINGSTR:
+			if (status.equals(Constants.PENDINGSTR)) {
 				program.setStatus(WatchStatus.PENDING);
 				return jsonUtil.getJSONForObject(program);
-			case Constants.INPROGRESSSTR:
+			} else if (status.equals(Constants.INPROGRESSSTR)) {
 				program.setStatus(WatchStatus.INPROGRESS);
 				return jsonUtil.getJSONForObject(program);
-			case Constants.COMPLETESTR:
+			} else if (status.equals(Constants.COMPLETESTR)) {
 				program.setStatus(WatchStatus.COMPLETED);
 				return jsonUtil.getJSONForObject(program);
-			default:
+			} else {
 				return jsonUtil.getJSONForObject(program);
 			}
+		}
 
-		} else {
+		else {
 			return Constants.PROGRAMNOTEXIST;
 		}
 	}

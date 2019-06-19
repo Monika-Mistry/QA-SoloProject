@@ -32,8 +32,8 @@ const populateDropDown = (response, drpdwn, value, field) => {
     let results = [];
     resultObj = JSON.parse(response);
     //add to array
-    (Array.isArray(resultObj)) {
-        lts = results.concat(resultObj);
+    if (Array.isArray(resultObj)) {
+        results = results.concat(resultObj);
     } else {
         results.push(resultObj);
     };

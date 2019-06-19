@@ -87,7 +87,7 @@ public class NetflixDatabaseRepository implements NetflixRepository {
 	public String getTitle(int id) {
 		Netflix program = manager.find(Netflix.class,id);
 		if(program != null) {
-			return program.getTitle();
+			return "{\"message\":\""+ program.getTitle() +"\"}";
 		}
 		return Constants.PROGRAMNOTEXIST;
 	}

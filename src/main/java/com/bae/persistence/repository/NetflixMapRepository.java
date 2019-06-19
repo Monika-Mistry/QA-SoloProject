@@ -61,7 +61,8 @@ public class NetflixMapRepository implements NetflixRepository {
 
 	public String getTitle(int id) {
 		if(netflixMap.containsKey(id)) {
-			return netflixMap.get(id).getTitle();
+			Netflix program = netflixMap.get(id);
+			return "{\"message\":\""+ program.getTitle() + "\"}";
 		}
 		return Constants.PROGRAMNOTEXIST;
 	}

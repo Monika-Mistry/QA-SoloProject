@@ -38,7 +38,7 @@ const populateGenres = genres => {
 
 const populateDropDown = (response, drpdwn, value, field) => {
   let results = [];
-  resultObj = JSON.parse(response);
+  let resultObj = JSON.parse(response);
   //add to array
   if (Array.isArray(resultObj)) {
     results = results.concat(resultObj);

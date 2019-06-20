@@ -52,7 +52,7 @@ const displayResults = (results, headers, numFields, fct, method) => {
         //   method.concat("(").concat(value.netflixId).concat(")");
         // });
         btnCRUD.onclick = function () {
-          method.concat("(").concat(value.netflixId).concat(")");
+          method.concat("(").concat(value[netflixId]).concat(")");
         };
 
         cell.append(btnCRUD);

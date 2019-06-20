@@ -43,10 +43,8 @@ const removeFromWatchlist = () => {
 };
 
 const removeFromWatchlistTable = id => {
-  console.log(id);
   makeRequest("DELETE", removeWatchlist.concat(id))
     .then(response => {
-      console.log(response);
       watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));
@@ -69,11 +67,8 @@ const getWatchlist = () => {
 const updateWatchlistProgram = () => {
   let status = document.getElementById("status").value;
   let id = document.getElementById("netflixProgram").value;
-  console.log(status);
-  console.log(id);
   makeRequest("PUT", updateWatchlist.concat(id), status)
     .then(response => {
-      console.log(response);
       watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));

@@ -46,6 +46,7 @@ const removeFromWatchlistTable = id => {
   makeRequest("DELETE", removeWatchlist.concat(id))
     .then(response => {
       watchlistDisplayResults(response);
+      getWatchlist();
     })
     .catch(error => console.log(error.message));
 };

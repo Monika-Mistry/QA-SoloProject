@@ -2,6 +2,7 @@ package com.bae.business.service;
 
 import javax.inject.Inject;
 
+import com.bae.persistence.repository.NetflixDatabaseRepository;
 import com.bae.persistence.repository.NetflixRepository;
 
 public class NetflixServiceImpl implements NetflixService {
@@ -27,6 +28,11 @@ public class NetflixServiceImpl implements NetflixService {
 
 	public String removeAProgram(int id) {
 		return netflixRepository.removeAProgram(id);
+	}
+
+	public void setRepository(NetflixRepository repository) {
+		this.netflixRepository = repository;
+		
 	}
 
 }

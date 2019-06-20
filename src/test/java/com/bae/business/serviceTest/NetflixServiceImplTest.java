@@ -2,12 +2,11 @@ package com.bae.business.serviceTest;
 
 import static org.junit.Assert.assertEquals;
 
-import javax.inject.Inject;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -21,26 +20,27 @@ public class NetflixServiceImplTest {
 	@InjectMocks
 	private NetflixServiceImpl service;
 	
-	@Inject
-	private NetflixRepository ndbr;
+	@Mock
+	private NetflixRepository repo;
 	
-//	@Before
-//	public void setup() {
-//		service.setRepository(ndbr);
-//	}
 
-	@Ignore
 	@Test
 	public void getAllProgrammesTestWhenDBEmpty() {
-		Mockito.when(ndbr.getAllProgrammes()).thenReturn(TestConstants.EMPTYLIST);
+		Mockito.when(repo.getAllProgrammes()).thenReturn(TestConstants.EMPTYLIST);
 		assertEquals(TestConstants.EMPTYLIST, service.getAllProgrammes());
 	}
 
-	@Ignore
+
 	@Test
 	public void addProgramTest() {
-		Mockito.when(ndbr.addAProgram(TestConstants.TEST_PROGRAM1STR)).thenReturn(TestConstants.TEST_PROGRAM1STR);
+		Mockito.when(repo.addAProgram(TestConstants.TEST_PROGRAM1STR)).thenReturn(TestConstants.TEST_PROGRAM1STR);
 		assertEquals(TestConstants.TEST_PROGRAM1STR, service.addAProgram(TestConstants.TEST_PROGRAM1STR));
+	}
+	
+	@Test
+	public void getAProgramThatDoesNotExist() {
+		Mockito.when(repo.getAProgram(Mockito.anyInt())).thenReturn(TestConstants.PROGRAMNOTEXIST);
+		assertEquals(TestConstants.PROGRAMNOTEXIST, service.getAProgram(1));
 	}
 
 }

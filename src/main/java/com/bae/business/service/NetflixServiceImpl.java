@@ -29,9 +29,4 @@ public class NetflixServiceImpl implements NetflixService {
 		return netflixRepository.removeAProgram(id);
 	}
 
-	public void setRepository(NetflixRepository repository) {
-		this.netflixRepository = repository;
-		
-	}
-
 }

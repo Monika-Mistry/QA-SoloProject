@@ -33,6 +33,7 @@ public class TestConstants {
 	public static final String EMPTYMAP = "{}";
 	public static final String NOPROGRAMEXISTS = "Program does not exist";
 	public static final String PROGRAMEXISTS = "{\"message\": \"Program already exists\"}";
+	public static final String PROGRAMNOTEXIST = "{\"message\": \"Program does not exists\"}";
 
 	// GenreRepo
 	public static final String GENRENOTEXIST = "{\"message\":\"Genre does not exist\"}";

@@ -12,6 +12,6 @@ body {
     font-weight: bold;
 }
 
-#results {
-    padding-top: 10px;
+div {
+    margin-top: 5px;
 }

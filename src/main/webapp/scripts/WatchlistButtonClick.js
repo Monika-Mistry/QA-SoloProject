@@ -1,5 +1,5 @@
 const getAllWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/getWatchlist";
-const removeWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/removeAProgram";
+const removeWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/removeAProgram/";
 const addWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/addAProgram";
 const updateWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/updateAProgram/";
 

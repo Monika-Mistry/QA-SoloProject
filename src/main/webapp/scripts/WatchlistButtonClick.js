@@ -55,11 +55,10 @@ const getWatchlist = () => {
     .then(response => {
       let programmes =[];
       let resultObj = JSON.parse(response);
-      console.log(resultObj);
       resultObj.forEach(element => {
         programmes.push(watchlistMaker(element));
       });
-      console.log(programmes);
+
       watchlistDisplayAllResults(JSON.stringify(programmes));
     })
     .catch(error => console.log(error.message));

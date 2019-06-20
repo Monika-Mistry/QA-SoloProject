@@ -2,7 +2,6 @@ package com.bae.business.service;
 
 import javax.inject.Inject;
 
-import com.bae.persistence.repository.NetflixDatabaseRepository;
 import com.bae.persistence.repository.NetflixRepository;
 
 public class NetflixServiceImpl implements NetflixService {

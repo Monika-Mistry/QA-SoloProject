@@ -70,8 +70,7 @@ const removeAProgram = () => {
       let modal = document.getElementById("delResponse");
       modal.innerText = responseMessage.message;
       $('#deleteModal').modal('show');
-
-      //window.alert(responseMessage.message);
+      getAllProgrammes();
     })
     .catch(error => console.log(error.message));
 };

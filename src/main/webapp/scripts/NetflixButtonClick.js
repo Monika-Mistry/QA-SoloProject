@@ -1,19 +1,19 @@
-// const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
-// const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
-// const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram";
-// const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram/";
-// const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
+const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
+const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram";
+const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram/";
+const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
 
-const getAllNetflix =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
-const getANetflix =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/";
-const removeNetflix =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/";
-const addNetflix =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram";
-const updateNetflix =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/";
+// const getAllNetflix =
+//   "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
+// const getANetflix =
+//   "http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/";
+// const removeNetflix =
+//   "http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/";
+// const addNetflix =
+//   "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram";
+// const updateNetflix =
+//   "http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/";
 
 const getAllProgrammes = () => {
   makeRequest("GET", getAllNetflix)

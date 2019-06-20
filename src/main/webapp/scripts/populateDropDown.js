@@ -1,8 +1,8 @@
-// const getAllGenre = "http://34.90.182.15:8888/netflixWatchlistApp/api/genre/getAllGenres";
+const getAllGenre = "http://34.90.182.15:8888/netflixWatchlistApp/api/genre/getAllGenres";
 
 
-const getAllGenre =
-  "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres";
+// const getAllGenre =
+//   "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres";
 
 
 const getTitles = () => {

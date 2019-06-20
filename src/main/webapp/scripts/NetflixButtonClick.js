@@ -123,6 +123,6 @@ const netflixMaker = netflix => {
 
 const redirectWatchlist = (response, method) => {
   window.location = "watchlist.html";
-  method(response);
+  window.onload = method(response);
 
 }

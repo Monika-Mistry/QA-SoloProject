@@ -48,9 +48,12 @@ const displayResults = (results, headers, numFields, fct, method) => {
         btnCRUD.type = "button";
         btnCRUD.className = "btn btn-dark myBtn";
         btnCRUD.value = fct;
-        btnCRUD.addEventListener("click", function () {
+        // btnCRUD.addEventListener("click", function () {
+        //   method.concat("(").concat(value.netflixId).concat(")");
+        // });
+        btnCRUD.onclick = function () {
           method.concat("(").concat(value.netflixId).concat(")");
-        });
+        };
 
         cell.append(btnCRUD);
 

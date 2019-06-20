@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -34,6 +35,7 @@ public class NetflixServiceImplTest {
 		Mockito.when(ndbr.getAllProgrammes()).thenReturn(TestConstants.EMPTYLIST);
 		assertEquals(TestConstants.EMPTYLIST, service.getAllProgrammes());
 	}
+
 	@Ignore
 	@Test
 	public void addProgramTest() {

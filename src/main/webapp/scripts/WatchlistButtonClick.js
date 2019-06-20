@@ -74,5 +74,5 @@ const updateWatchlistProgram = () => {
 };
 
 const watchlistMaker = watchlist => {
-  return { title: watchlist[0], status: watchlist[1] };
+  return { netflixId: watchlist[0], title: watchlist[1], status: watchlist[2] };
 };

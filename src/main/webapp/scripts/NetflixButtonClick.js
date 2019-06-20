@@ -108,7 +108,7 @@ const addToWatchlistTable = id => {
 
   makeRequest("POST", addWatchlist, JSON.stringify(program))
     .then(response => {
-      window.location = "watchlist.html"
+      window.location = "watchlist.html";
       watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));

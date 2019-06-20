@@ -39,5 +39,10 @@ pipeline{
                                 sh "sudo cp target/netflixWatchlistApp.war /home/monika_mistry1/wildfly-10.1.0.Final/standalone/deployments/"
                         }
                 }
+                stage('--email--'){
+                        steps{
+                                emailext attachLog: true, attachmentsPattern: 'target/site/jacoco/index.html, target/site/surefire-report.html', body: '', subject: '', to: 'monika.mistry1@gmail.com'
+                        }
+                }
         }
 }

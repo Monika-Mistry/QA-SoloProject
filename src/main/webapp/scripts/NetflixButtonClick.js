@@ -67,7 +67,10 @@ const removeAProgram = () => {
   makeRequest("DELETE", removeNetflix.concat(id))
     .then(response => {
       let responseMessage = JSON.parse(response);
-      window.alert(responseMessage.message);
+      let modal = document.getElementById("delResponse");
+      modal.innerText = responseMessage.message;
+
+      //window.alert(responseMessage.message);
     })
     .catch(error => console.log(error.message));
 };

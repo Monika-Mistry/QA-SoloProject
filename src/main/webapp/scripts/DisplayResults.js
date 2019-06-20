@@ -54,7 +54,7 @@ const displayResults = (results, headers, numFields, fct, method) => {
         // btnCRUD.onclick = function () {
         //   method.concat("(").concat(value["netflixId"]).concat(")");
         // };
-        let btnFunction = 'method.concat("(").concat(value["netflixId"]).concat(")")';
+        let btnFunction = method.concat("(").concat(value["netflixId"]).concat(")");
         btnCRUD.setAttribute("onclick", btnFunction);
         
 

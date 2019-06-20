@@ -22,7 +22,6 @@ const getTitles = () => {
 const getGenres = () => {
   makeRequest("GET", getAllGenre)
     .then(response => {
-      console.table(response);
       populateGenres(response);
     })
     .catch(error => console.log(error.message));

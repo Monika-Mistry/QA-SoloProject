@@ -69,6 +69,7 @@ const removeAProgram = () => {
       let responseMessage = JSON.parse(response);
       let modal = document.getElementById("delResponse");
       modal.innerText = responseMessage.message;
+      jQuery('#deleteModal').modal('show');
 
       //window.alert(responseMessage.message);
     })

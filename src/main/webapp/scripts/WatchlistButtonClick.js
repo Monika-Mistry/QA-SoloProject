@@ -79,4 +79,4 @@ const watchlistMaker = watchlist => {
 };
 
 
-getWatchlist();
+//getWatchlist();

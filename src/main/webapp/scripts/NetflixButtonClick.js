@@ -121,4 +121,4 @@ const netflixMaker = netflix => {
   };
 };
 
-getAllProgrammes();
+//getAllProgrammes();

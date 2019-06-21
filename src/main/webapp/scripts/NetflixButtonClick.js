@@ -107,7 +107,7 @@ const addToWatchlistTable = id => {
 
   makeRequest("POST", addWatchlist, JSON.stringify(program))
     .then(response => {
-      redirectWatchlist(response, watchlistDisplayResults);
+      window.location = "watchlist.html";
     })
     .catch(error => console.log(error.message));
 };
@@ -121,8 +121,4 @@ const netflixMaker = netflix => {
   };
 };
 
-const redirectWatchlist = (response, method) => {
-  window.location = "watchlist.html";
-  window.onload = method(response);
-
-}
+getAllProgrammes();

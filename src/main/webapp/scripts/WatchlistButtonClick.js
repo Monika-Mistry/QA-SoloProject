@@ -77,3 +77,6 @@ const updateWatchlistProgram = () => {
 const watchlistMaker = watchlist => {
   return { netflixId: watchlist[0], title: watchlist[1], status: watchlist[2] };
 };
+
+
+getWatchlist();

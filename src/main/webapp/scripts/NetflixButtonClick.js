@@ -1,8 +1,8 @@
-const getAllNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
-const getANetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/getAProgram/";
-const removeNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/removeAProgram/";
-const addNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/addAProgram/";
-const updateNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+const getAllNetflix = "/netflixWatchlistApp/api/netflix/getAllProgrammes";
+const getANetflix = "/netflixWatchlistApp/api/netflix/getAProgram/";
+const removeNetflix = "/netflixWatchlistApp/api/netflix/removeAProgram/";
+const addNetflix = "/netflixWatchlistApp/api/netflix/addAProgram/";
+const updateNetflix = "/netflixWatchlistApp/api/netflix/updateAProgram/";
 
 // const getAllNetflix =
 //   "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
@@ -67,7 +67,10 @@ const removeAProgram = () => {
   makeRequest("DELETE", removeNetflix.concat(id))
     .then(response => {
       let responseMessage = JSON.parse(response);
-      window.alert(responseMessage.message);
+      let modal = document.getElementById("delResponse");
+      modal.innerText = responseMessage.message;
+      $('#deleteModal').modal('show');
+      getAllProgrammes();
     })
     .catch(error => console.log(error.message));
 };
@@ -104,7 +107,7 @@ const addToWatchlistTable = id => {
 
   makeRequest("POST", addWatchlist, JSON.stringify(program))
     .then(response => {
-      watchlistDisplayResults(response);
+      window.location = "watchlist.html";
     })
     .catch(error => console.log(error.message));
 };
@@ -117,3 +120,5 @@ const netflixMaker = netflix => {
     genreName: netflix[3]
   };
 };
+
+getAllProgrammes();

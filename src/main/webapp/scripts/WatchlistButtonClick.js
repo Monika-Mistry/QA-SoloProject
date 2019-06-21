@@ -1,7 +1,7 @@
-const getAllWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/getWatchlist";
-const removeWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/removeAProgram/";
-const addWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/addAProgram";
-const updateWatchlist = "http://104.155.54.25:8888/netflixWatchlistApp/api/watchlist/updateAProgram/";
+const getAllWatchlist = "/netflixWatchlistApp/api/watchlist/getWatchlist";
+const removeWatchlist = "/netflixWatchlistApp/api/watchlist/removeAProgram/";
+const addWatchlist = "/netflixWatchlistApp/api/watchlist/addAProgram";
+const updateWatchlist = "/netflixWatchlistApp/api/watchlist/updateAProgram/";
 
 // const getAllWatchlist =
 //   "http://localhost:8080/netflixWatchlistApp/api/watchlist/getWatchlist";
@@ -46,6 +46,7 @@ const removeFromWatchlistTable = id => {
   makeRequest("DELETE", removeWatchlist.concat(id))
     .then(response => {
       watchlistDisplayResults(response);
+      getWatchlist();
     })
     .catch(error => console.log(error.message));
 };
@@ -74,5 +75,8 @@ const updateWatchlistProgram = () => {
 };
 
 const watchlistMaker = watchlist => {
-  return { title: watchlist[0], status: watchlist[1] };
+  return { netflixId: watchlist[0], title: watchlist[1], status: watchlist[2] };
 };
+
+
+//getWatchlist();

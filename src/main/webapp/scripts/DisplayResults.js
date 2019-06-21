@@ -51,9 +51,12 @@ const displayResults = (results, headers, numFields, fct, method) => {
         // btnCRUD.addEventListener("click", function () {
         //   method.concat("(").concat(value.netflixId).concat(")");
         // });
-        btnCRUD.onclick = function () {
-          method.concat("(").concat(value["netflixId"]).concat(")");
-        };
+        // btnCRUD.onclick = function () {
+        //   method.concat("(").concat(value["netflixId"]).concat(")");
+        // };
+        let btnFunction = method.concat("(").concat(value["netflixId"]).concat(")");
+        btnCRUD.setAttribute("onclick", btnFunction);
+        
 
         cell.append(btnCRUD);
 
@@ -85,7 +88,7 @@ const netflixDisplayResults = results => {
     "select"
   ];
 
-  displayResults(results, headers, 4, "Add", "addToWatchlistTable");
+  displayResults(results, headers, 4, "Add To Watchlist", "addToWatchlistTable");
 };
 
 const watchlistDisplayResults = results => {

@@ -1,3 +1,8 @@
+#--build-arg
+#WILDFLY_VERSION: wildfly docker image version (default = 10.1.0.Final)
+#WAR_NAME: name of your war file with .war extension (default = netflixWatchlistApp.war)
+
+
 ARG WAR_NAME="netflixWatchlistApp.war"
 ARG WILDFLY_VERSION=10.1.0.Final
 
